@@ -3,16 +3,16 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #000000;
 }
 
 a {
-  color: #94c045;
+  color: #74a11f;
   text-decoration: none;
 }
 
 a:hover {
-  color: #aacd6b;
+  color: #b9e26e;
   text-decoration: none;
 }
 
@@ -396,7 +396,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 0;
   font-family: "Poppins", sans-serif;
-  color: #646c55;
+  color: #0a0a0a;
 }
 .section-title p {
   margin-bottom: 0;
@@ -489,9 +489,9 @@ section {
   font-size: 15px;
 }
 .about .content h3 {
-  font-weight: 600;
-  font-size: 20px;
-  color: #0978ad;
+  font-weight: 500;
+  font-size: 18px;
+  color: #022e07;
 }
 .about .content ul {
   list-style: none;
@@ -606,7 +606,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: #86b03c;
+  background: #c4fbe9;
   padding: 50px 0;
 }
 .cta h3 {
@@ -640,107 +640,105 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
-}
 .portfolio #portfolio-flters {
   padding: 0;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 50px auto;
   list-style: none;
   text-align: center;
 }
+
 .portfolio #portfolio-flters li {
   cursor: pointer;
   display: inline-block;
-  padding: 8px 15px 10px 15px;
+  padding: 8px 20px 10px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
-  color: #444444;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 3px;
+  color: #4d4643;
+  transition: all 0.3s;
+  border-radius: 4px;
 }
+
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  background: #94c045;
+  background: #1bbd36;
 }
+
 .portfolio #portfolio-flters li:last-child {
   margin-right: 0;
 }
-.portfolio .portfolio-wrap {
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background: rgba(60, 65, 51, 0.6);
+
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
 }
-.portfolio .portfolio-wrap::before {
-  content: "";
-  background: rgba(60, 65, 51, 0.6);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transition: all ease-in-out 0.3s;
-  z-index: 2;
-  opacity: 0;
-}
-.portfolio .portfolio-wrap img {
-  transition: all ease-in-out 0.3s;
-}
-.portfolio .portfolio-wrap .portfolio-info {
+
+.portfolio .portfolio-item .portfolio-info {
   opacity: 0;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  left: 30px;
+  right: 30px;
   bottom: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
 }
-.portfolio .portfolio-wrap .portfolio-info h4 {
-  font-size: 20px;
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
   color: #fff;
   font-weight: 600;
+  color: #111;
 }
-.portfolio .portfolio-wrap .portfolio-info p {
-  color: rgba(255, 255, 255, 0.7);
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: #444444;
   font-size: 14px;
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-  font-style: italic;
+  margin-bottom: 0;
 }
-.portfolio .portfolio-wrap .portfolio-links {
+
+.portfolio .portfolio-item .portfolio-info .preview-link, .portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 40px;
+  font-size: 24px;
+  top: calc(50% - 18px);
+  color: #2b2b2b;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: #1bbd36;
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 10px;
+}
+
+.portfolio .portfolio-item .portfolio-links {
+  opacity: 0;
+  left: 0;
+  right: 0;
   text-align: center;
-  z-index: 4;
+  z-index: 3;
+  position: absolute;
+  transition: all ease-in-out 0.3s;
 }
-.portfolio .portfolio-wrap .portfolio-links a {
+
+.portfolio .portfolio-item .portfolio-links a {
   color: #fff;
-  margin: 0 5px 0 0;
+  margin: 0 2px;
   font-size: 28px;
   display: inline-block;
   transition: 0.3s;
 }
-.portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #c0da91;
+
+.portfolio .portfolio-item .portfolio-links a:hover {
+  color: #57e76f;
 }
-.portfolio .portfolio-wrap:hover::before {
+
+.portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
-}
-.portfolio .portfolio-wrap:hover img {
-  transform: scale(1.2);
-}
-.portfolio .portfolio-wrap:hover .portfolio-info {
-  opacity: 1;
+  bottom: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -749,27 +747,33 @@ section {
 .portfolio-details {
   padding-top: 40px;
 }
+
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
 }
+
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
+
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #94c045;
+  border: 1px solid #1bbd36;
 }
+
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #94c045;
+  background-color: #1bbd36;
 }
+
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px rgba(60, 65, 51, 0.08);
+  box-shadow: 0px 0 30px rgba(17, 17, 17, 0.08);
 }
+
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
   font-weight: 700;
@@ -777,25 +781,31 @@ section {
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
 }
+
 .portfolio-details .portfolio-info ul {
   list-style: none;
   padding: 0;
   font-size: 15px;
 }
+
 .portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
+
 .portfolio-details .portfolio-description {
   padding-top: 30px;
 }
+
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -828,8 +838,8 @@ section {
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
-  font-size: 14px;
-  color: #717a60;
+  font-size: 18px;
+  color: #10120c;
 }
 .contact .info .email, .contact .info .phone {
   margin-top: 40px;
@@ -972,11 +982,11 @@ section {
 }
 .team .member .member-info span {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   text-transform: uppercase;
   font-weight: 400;
-  margin-bottom: 15px;
-  color: #94c045;
+  margin-bottom: 20px;
+  color: #c5141c;
 }
 .team .member .member-info p {
   font-style: italic;
@@ -1039,140 +1049,161 @@ section {
   color: #fff;
 }
 
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #141611;
-  align-items: center;
-  justify-content: center;
   color: #fff;
   font-size: 14px;
+  background: #111;
 }
+
 #footer .footer-top {
-  background: #1c1f18;
-  padding: 60px 0 30px 0;
+  padding: 30px 0 10px 0;
+  background: #1e1e1e;
 }
-#footer .footer-top .footer-info {
+
+#footer .footer-top .footer-contact {
   margin-bottom: 30px;
 }
-#footer .footer-top .footer-info h3 {
-  font-size: 26px;
+
+#footer .footer-top .footer-contact h3 {
+  font-size: 22px;
   margin: 0 0 10px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: #9fc658;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
 }
-#footer .footer-top .footer-info p {
+
+#footer .footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #1ed33c;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
   color: #fff;
 }
-#footer .footer-top .social-links a {
+
+#footer .footer-newsletter {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 4px 0 0 4px;
+  text-align: left;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: -4px;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: #1bbd36;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  background: #2ae149;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #fff;
+}
+
+#footer .social-links a {
+  font-size: 18px;
   display: inline-block;
-  background: #3c4133;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
   line-height: 1;
+  padding: 8px 0;
   margin-right: 4px;
-  border-radius: 50%;
+  border-radius: 4px;
   text-align: center;
   width: 36px;
   height: 36px;
   transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
-#footer .footer-top .social-links a i {
-  line-height: 0;
-  font-size: 16px;
-}
-#footer .footer-top .social-links a:hover {
-  background: #94c045;
+
+#footer .social-links a:hover {
+  background: #1bbd36;
   color: #fff;
   text-decoration: none;
-}
-#footer .footer-top h4 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 12px;
-}
-#footer .footer-top h4::before, #footer .footer-top h4::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-}
-#footer .footer-top h4::before {
-  right: 0;
-  background: #3c4133;
-}
-#footer .footer-top h4::after {
-  background: #94c045;
-  width: 60px;
-}
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 5px 0 0 0;
-  margin: 0;
-}
-#footer .footer-top .footer-links ul li {
-  padding: 0 0 15px 0;
-}
-#footer .footer-top .footer-links ul a {
-  color: #fff;
-  transition: 0.3s;
-}
-#footer .footer-top .footer-links ul a:hover {
-  color: #94c045;
-}
-#footer .footer-top .footer-contact {
-  margin-bottom: 5px;
-}
-#footer .footer-top .footer-contact p {
-  line-height: 26px;
-}
-#footer .footer-top .footer-newsletter {
-  margin-bottom: 30px;
-}
-#footer .footer-top .footer-newsletter input[type=email] {
-  border: 0;
-  padding: 6px 8px;
-  width: 65%;
-  border-radius: 4px 0 0 4px;
-}
-#footer .footer-top .footer-newsletter input[type=submit] {
-  background: #94c045;
-  border: 0;
-  border-radius: 0 4px 4px 0;
-  width: 35%;
-  padding: 6px 0;
-  text-align: center;
-  color: #fff;
-  transition: 0.3s;
-  cursor: pointer;
-}
-#footer .footer-top .footer-newsletter input[type=submit]:hover {
-  background: #789d35;
-}
-#footer .copyright {
-  text-align: center;
-}
-#footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: #fff;
 }

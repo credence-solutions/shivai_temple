@@ -1,47 +1,57 @@
-{% load static %}
-
+  {% load static %}
+  
   <!-- ======= Footer ======= -->
   <footer id="footer">
+
     <div class="footer-top">
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-6 col-md-6 footer-info">
-            <h3>पत्ता :</h3>
-            <p>
-              शिवाई मंदिर, शिवना <br>
-              ता. सिल्लोड,
-              जि.औरंगाबाद<br>
-              पिन कोड - 431132
-              </p>
-            </div>
-          
-          <div class="col-lg-6 col-md-6 footer-contact">
-            <h3>सोशल मीडिया</h3>
-            <p>              
-              <strong>Phone:</strong> +91 866985214<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
+          <div class="col-lg-4 col-md-6 footer-links footer-newsletter">
+            <h4>महत्त्वाचे लिंक</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website:about' %}">About</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website:gallery' %}">Gallery</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website:contact' %}">Contact</a></li>
+              </ul>
+           </div>
 
-            <div class="social-links">
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
-            </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <center>
+              <h4>श्री. शिवाई देवी संस्थान, शिवना</h4>
+                <p>
+                  शिवाई मंदिर, शिवना <br>
+                  ता. सिल्लोड, जि.औरंगाबाद<br>
+                  पिन कोड - 431132
+                  <br><br>
+                  <strong>Phone:</strong> +91 8698745896<br>
+                  <strong>Email:</strong> info@shivaidevishivna.in<br>
+                </p>
+              </center>
+          </div>
 
+          <div class="col-lg-4 col-md-6 footer-links footer-newsletter" >
+            <h4 style="float: right;">सोशल मीडिया</h4><br><br>
+              <ul style="float: right;">
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://api.whatsapp.com/send?phone=918668875974" target="_blank">Whatsapp</a></li>
+              </ul>
           </div>
 
         </div>
       </div>
     </div>
-
     <div class="container d-md-flex py-4">
-      <div class="me-md-auto text-center text-md-start">
-       <div class="copyright">
-          &copy; Copyright <span><a href="{% url 'website:index' %}">Shivai Shivna</a></span>. All Rights Reserved
+        <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+            &copy; Copyright <span><a href="{% url 'website:index' %}">Shivai Devi Shivna</a></span>. All Rights Reserved
+          </div>
         </div>
+        <div class="credits text-center text-md-right pt-3 pt-md-0">
+        Designed by <a href="https://www.credencesolutions.in/" target="_blank">Credence Solutions</a>
       </div>
-      <div class="credits text-center text-md-right pt-3 pt-md-0">
-      Designed by <a href="https://www.credencesolutions.in/" target="_blank">Credence Solutions</a>
     </div>
-    </div>
-  </footer><!-- End Footer -->
+    
+  </footer>
+  <!-- End Footer -->
