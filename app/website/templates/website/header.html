@@ -1,0 +1,24 @@
+{% load static %}
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="{% url 'website:index' %}">शिवाई मंदिर</a></h1>
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active" href="{% url 'website:index' %}">Home</a></li>
+          <li><a href="{% url 'website:about' %}">About</a></li> 
+          <li><a href="{% url 'website:gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'website:contact' %}">Contact</a></li>
+          <li><a href="https://goo.gl/maps/zZSpivWLLdT2" target="_blank">Location</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

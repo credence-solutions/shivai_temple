@@ -1,4 +1,10 @@
-(function () {
+/**
+* Template Name: Serenity - v4.5.0
+* Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+(function() {
   "use strict";
 
   /**
@@ -35,35 +41,11 @@
   }
 
   /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
     let header = select('#header')
     let offset = header.offsetHeight
-
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 20
-    }
 
     let elementPos = select(el).offsetTop
     window.scrollTo({
@@ -107,7 +89,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function (e) {
+  on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -116,7 +98,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function (e) {
+  on('click', '.navbar .dropdown > a', function(e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -126,7 +108,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function (e) {
+  on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -153,19 +135,35 @@
   });
 
   /**
-   * Initiate glightbox
+   * Initiate portfolio lightbox 
    */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
   /**
-   * Gallery Slider
+   * Skills animation
    */
-  new Swiper('.gallery-slider', {
+  let skilsContent = select('.skills-content');
+  if (skilsContent) {
+    new Waypoint({
+      element: skilsContent,
+      offset: '80%',
+      handler: function(direction) {
+        let progress = select('.progress .progress-bar', true);
+        progress.forEach((el) => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%'
+        });
+      }
+    })
+  }
+
+  /**
+   * Clients Slider
+   */
+  new Swiper('.clients-slider', {
     speed: 400,
     loop: true,
-    centeredSlides: true,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
@@ -178,37 +176,78 @@
     },
     breakpoints: {
       320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-      575: {
         slidesPerView: 2,
-        spaceBetween: 20
+        spaceBetween: 40
       },
-      768: {
+      480: {
         slidesPerView: 3,
-        spaceBetween: 20
+        spaceBetween: 60
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 80
       },
       992: {
-        slidesPerView: 5,
-        spaceBetween: 20
+        slidesPerView: 6,
+        spaceBetween: 120
       }
     }
   });
 
   /**
-   * Initiate gallery lightbox 
+   * Porfolio isotope and filter
    */
-  const galleryLightbox = GLightbox({
-    selector: '.gallery-lightbox'
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
+
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
   });
 
   /**
-   * Buy tickets select the ticket type on click
+   * Initiate portfolio lightbox 
    */
-  on('show.bs.modal', '#buy-ticket-modal', function (event) {
-    select('#buy-ticket-modal #ticket-type').value = event.relatedTarget.getAttribute('data-ticket-type')
-  })
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
+
+  /**
+   * Portfolio details slider
+   */
+  new Swiper('.portfolio-details-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
 
   /**
    * Animation on scroll

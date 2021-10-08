@@ -1,583 +1,135 @@
+{% extends 'website/base.html' %}
+
 {% load static %}
-
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>शिवाई मंदिर, शिवना</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="57x57" href="{% static 'website/assets/img/apple-icon-57x57.png' %}">
-  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'website/assets/img/apple-icon-60x60.png' %}">
-  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'website/assets/img/apple-icon-72x72.png' %}">
-  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'website/assets/img/apple-icon-76x76.png' %}">
-  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'website/assets/img/apple-icon-114x114.png' %}">
-  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'website/assets/img/apple-icon-120x120.png' %}">
-  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'website/assets/img/apple-icon-144x144.png' %}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'website/assets/img/apple-icon-152x152.png' %}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'website/assets/img/apple-icon-180x180.png' %}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'website/assets/img/android-icon-192x192.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'website/assets/img/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'website/assets/img/favicon-96x96.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'website/assets/img/favicon-16x16.png' %}">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'website/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'website/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'website/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'website/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'website/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-   <link href="{% static 'website/css/style.css' %}" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center ">
-    <div class="container-fluid container-xxl d-flex align-items-center">
-
-      <div id="logo" class="me-auto">
-        <h1><a href="{% url 'website:index' %}"><span>शिवाई मंदिर</span></a></h1>
-        <!--<a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="#venue">Places</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-     
-    </div>
-  </header><!-- End Header -->
+{% block content %}
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      <h1 class="mb-4 pb-0"><span>शिवाई मंदिर</span> <br>शिवना</h1>
-  \   <a href="https://www.youtube.com/watch?v=YFRNbNWOXis&ab_channel=RJDipakWankhade" class="glightbox play-btn mb-4"></a>
+    <div class="hero-container" data-aos="fade-up">
+      <h1>शिवाई मंदिर, शिवना </h1>
+      <h2>सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके | शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ||</h2>
     </div>
-  </section><!-- End Hero Section -->
+  </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2>मंदिर बद्दल महिती</h2>
-            <p>शिवाई मंदिर, शिवना</p>
-            <p>ता. सिल्लोड</p> 
-            <p>जि.औरंगाबाद</p>
-          </div>
-          <div class="col-lg-3">
-            <h3>स्थान </h3>
-            <p>शिवाई मंदिर, शिवना</p>
-            <p>ता. सिल्लोड</p> 
-            <p>जि.औरंगाबाद</p>
-            <a href="https://goo.gl/maps/zZSpivWLLdT2" target="_blank">Map Location</a>
-            
-          </div>
-          <div class="col-lg-3">
-            <h3>मंदिर उघडण्याची वेळ</h3>
-            <p>दररोज - सकाळी ५.०० ते रात्री ८.००</p>
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row justify-content-end">
+          <div class="col-lg-11">
+            <div class="row justify-content-end">
+
+              <div class="col-lg-6 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box py-5">
+                  <i class="bi bi-geo-alt"></i>
+                  <p>शिवाई मंदिर, शिवना</p>
+                  <p>ता. सिल्लोड, जि.औरंगाबाद</p> 
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <i class="bi bi-clock"></i>
+                  <p>मंदिर उघडण्याची वेळ</p>
+                  <p>सकाळी ५.०० ते रात्री ८.००</p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 video-box align-self-baseline position-relative">
+            <img src="{% static 'website/assets/img/about.jpg' %}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=YFRNbNWOXis&ab_channel=RJDipakWankhade" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content">
+            <h3>        
+              शिवाबाई हे संस्थान सुमारे 300 वर्षापूर्वीचे जाग्रृत शक्तीपीठ आहे. <br><br>
+           
+                ऐतिहासिकदृष्ट्या शिवाई देवी मंदिराला मोठे महत्त्व आहे. सुमारे आठशे वर्षापूर्वी शिवना या गावाचे नाव शिवपूर असे होते. 
+              गावाच्या उत्तरेस पाच किलोमीटर अंतरावर सह्याद्री पर्वतरांगाच्या कुशीत शहादरी नावाचे छोटेसे गाव वसलेले होते. बहुतेक गवळी, 
+              गुराख्यांची वस्ती असलेल्या या गावातून शिवा नावाचा गवळी रोज दही, दूध, घेऊन येथे विक्रीसाठी घेऊन येत असे. <br>
+                गावालगत असलेल्या खोलेश्वर मंदिरातील शिवलिंगावर दही वाहून तो दर्शन करून जात असे. या नित्यक्रमात त्याने कधीही खंड पडू दिला नाही. शिवाला संतती 
+              नसल्यामुळे तो सदैव दु:खी राहत असे. एके दिवशी शिवा असाच व्याकुळ होऊन दर्शन घेत असतांना त्यास भोलेनाथ प्रसन्न झाले व त्यांनी 
+              वर मागावयास सांगितले.  शिवाने संततीसुख मागितले. महादेवाने तथास्तू म्हटले. पण एक अट टाकली की, तुला मुलगी होईल; पण ती जास्त दिवस 
+              तुझ्या सान्निध्यात राहणार नाही. <br>
+                एका वर्षानतंर शिवा गवळ्याच्या सौभाग्यवतीने एका गोंडस मुलीस जन्म दिला. मुलीच्या जन्माने शिवा खुप आनंदला. 
+              मोठ्या उत्साहाने तिचे नामकरण " शिवाई " असे करण्यात आले. पाच-सहा वर्षानंतर मुलगी जेव्हा चालायला लागली तेव्हा शिवा तिला घेऊन महादेवाच्या दर्शनासाठी आला. <br>
+                शिवाईने बाबांना सांगितले की, तुम्ही दुध- दही विकून परत या. मी मंदिरात थांबते. शिवाने होकार दिला. तो चार-पाच पावले पुढे गेला व मागे वळून पाहिले तर शिवाई गुप्त झाली.
+              तिथेच शिवाईचे भव्य व सुंदर असे मंदिर उभारले गेले. <br>
+                शिवाईच्या नावावरून या गावचे नाव शिवना हे नांव पडले आहे..याप्रमाणे शिवाबाईचा अल्प इतिहास आहे...
+            </h3>
+          </div>
+
+        </div>
+
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Speakers Section ======= -->
-    <section id="speakers">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>मंदिर विश्वस्त</h2>
-          <p>आमचे विश्वस्त</p>
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="fade-in">
+
+        <div class="text-center">
+          <h3>या देवी सर्वभुतेषु क्षान्तिरूपेण संस्थिता <br>
+              या देवी सर्वभुतेषु शक्तिरूपेण संस्थिता <br>
+              या देवी सर्वभुतेषु मातृरूपेण संस्थिता <br>
+              या देवी सर्वभुतेषु बुद्धिरूपेण संस्थिता <br>
+              नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः
+          </h3>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title pt-5" data-aos="fade-up">
+          <h2>प्रेक्षणीय स्थळे</h2>
+          <p>जवळपास असणाऱ्या प्रेक्षणीय स्थळांची माहिती</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="{% static 'website/assets/img/trustee/1.jpg' %}" alt="Speaker 1" class="img-fluid">
-              <div class="details">
-                <h3>जयश्री अंबेकर</a></h3>
-                <p>शिवना</p>
-                <div class="social">
-                  <a href="tel:918041426645">
-                    <i class="bi bi-phone">8041426645</i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp">8041426645</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="{% static 'website/assets/img/trustee/2.jpg' %}" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3>जयश्री अंबेकर</a></h3>
-                <p>शिवना</p>
-                <div class="social">
-                  <a href="tel:918041426645">
-                    <i class="bi bi-phone">8041426645</i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp">8041426645</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="{% static 'website/assets/img/trustee/2.jpg' %}" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3>जयश्री अंबेकर</a></h3>
-                <p>शिवना</p>
-                <div class="social">
-                  <a href="tel:918041426645">
-                    <i class="bi bi-phone">8041426645</i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp">8041426645</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="{% static 'website/assets/img/trustee/2.jpg' %}" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3>जयश्री अंबेकर</a></h3>
-                <p>शिवना</p>
-                <div class="social">
-                  <a href="tel:918041426645">
-                    <i class="bi bi-phone">8041426645</i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp">8041426645</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="{% static 'website/assets/img/trustee/2.jpg' %}" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3>जयश्री अंबेकर</a></h3>
-                <p>शिवना</p>
-                <div class="social">
-                  <a href="tel:918041426645">
-                    <i class="bi bi-phone">8041426645</i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp">8041426645</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'website/assets/img/trustee/3.jpg' %}" alt="Speaker 3" class="img-fluid">
-              <div class="details">
-                <h3>जयश्री अंबेकर</a></h3>
-                <p>शिवना</p>
-                <div class="social">
-                  <a href="tel:918041426645">
-                    <i class="bi bi-phone">8041426645</i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp">8041426645</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-        </div>
-      </div>
-
-    </section><!-- End Speakers Section -->
-
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery">
-
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>गॅलरी</h2>
-          <p>काही महत्वाचे फोटो </p>
-        </div>
-      </div>
-      
-      <div class="gallery-slider swiper">
-        <div class="swiper-wrapper align-items-center">
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/1.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/1.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/2.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/2.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/3.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/3.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/4.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/4.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/5.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/5.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/6.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/6.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/7.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/7.jpg' %}" class="img-fluid" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/8.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/8.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/9.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/9.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/10.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/10.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/gallery/11.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/gallery/11.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </section><!-- End Gallery Section -->
-
-
-    <!-- ======= Venue Section ======= -->
-    <section id="venue">
-
-      <div class="container-fluid" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>प्रेक्षणीय स्थळे </h2>
-          <p>जवळपास असणाऱ्या प्रेक्षणीय स्थळांची माहिती आणि फोटो</p>
-        </div>
-
-
-        <div class="row g-0">
-          <div class="col-lg-6 venue-map">
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'website/assets/img/amsari.jpg' %});">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35553.74796827794!2d75.78787896911682!3d20.50100293077938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd980b4cadcbd8b%3A0xf1ef41635b6f4060!2sShree%20Ambrishi%20Mahadev%20Mandir!5e0!3m2!1sen!2sin!4v1632994367128!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-          <div class="col-lg-6 venue-info">
-            <div class="row justify-content-center">
-              <div class="col-11 col-lg-8 position-relative">
-                <h3>श्री अंबॠषी महादेव मंदिर</h3>
-                <p>आमसरी, शिवना, महाराष्ट्र - 431118.</p>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h3>श्री अंबॠषी महादेव मंदिर</h3>
+                  <p>आमसरी, शिवना, महाराष्ट्र - 431118.</p>
+                </h5>
+                <div class="read-more"><a href="{% url 'website:gallery' %}"><i class="bi bi-arrow-right"></i>  फोटो बघा </a></div>
               </div>
             </div>
           </div>
-  
-          <div class="col-lg-6 venue-info">
-            <div class="row justify-content-center">
-              <div class="col-11 col-lg-8 position-relative">
-                <h3>जगप्रसिद्ध अजिंठा लेणी</h3>
-                <p>अजिंठा, महाराष्ट्र - 431118.</p>
+
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'website/assets/img/ajanta.jpg' %});">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.8854980970664!2d75.70106341532728!3d20.551865309261952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd97f7014a75e43%3A0x7ca8d7c57639691f!2sAjanta%20Caves!5e0!3m2!1sen!2sin!4v1632994712457!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h3>जगप्रसिद्ध अजिंठा लेणी</h3>
+                  <p>अजिंठा, महाराष्ट्र - 431118.</p>
+                </h5>
+                <div class="read-more"><a href="{% url 'website:gallery' %}"><i class="bi bi-arrow-right"></i>  फोटो बघा </a></div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6 venue-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.8854980970664!2d75.70106341532728!3d20.551865309261952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd97f7014a75e43%3A0x7ca8d7c57639691f!2sAjanta%20Caves!5e0!3m2!1sen!2sin!4v1632994712457!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
           
         </div>
 
       </div>
-        
-
-      <div class="container-fluid venue-gallery-container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-0">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/1.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/1.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/2.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/2.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/3.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/3.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/4.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/4.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/5.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/5.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/6.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/6.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/7.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/7.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% static 'website/assets/img/venue-gallery/8.jpg' %}" class="glightbox" data-gall="venue-gallery">
-                <img src="{% static 'website/assets/img/venue-gallery/8.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- End Venue Section -->
-
-
-    <!-- ======= Gallery Section ======= -->
-    <section id="blog">
-
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>लेख</h2>
-          <p>काही महत्वाचे लेख </p>
-        </div>
-      </div>
-      
-      <div class="gallery-slider swiper">
-        <div class="swiper-wrapper align-items-center">
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/blog/1.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/blog/1.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/blog/2.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/blog/2.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/blog/3.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/blog/3.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/blog/4.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/blog/4.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/blog/5.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/blog/5.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-          <div class="swiper-slide">
-            <a href="{% static 'website/assets/img/blog/6.jpg' %}" class="gallery-lightbox">
-              <img src="{% static 'website/assets/img/blog/6.jpg' %}" class="img-fluid image_size" alt="">
-            </a>
-          </div>
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </section><!-- End Gallery Section -->
-  
+    </section><!-- End Features Section -->
     
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="section-bg">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>संपर्क</h2>
-          <p>आमच्याशी संपर्क साधा</p>
-        </div>
-
-        <div class="row contact-info">
-
-          <div class="col-md-4">
-            <div class="contact-address">
-              <i class="bi bi-geo-alt"></i>
-              <h3>पत्ता</h3>
-              <address>शिवाई मंदिर, शिवना, ता. सिल्लोड,<br> जि.औरंगाबाद, पिन कोड - 431132</address>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="bi bi-phone"></i>
-              <h3>फोन नंबर</h3>
-              <p><a href="tel:+918041426645">+91 8041426645</a></p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-email">
-              <i class="bi bi-envelope"></i>
-              <h3>ईमेल</h3>
-              <p><a href="mailto:abc@xyz.com">abc@xyz.com</a></p>
-            </div>
-          </div>
-
-        </div>
-        
-
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-6 col-md-6 footer-info">
-            <!--<img src="{% static 'website/assets/img/logo.png' %}" alt="TheEvenet">-->
-            <p>पत्ता :  </p>
-            <p>शिवाई मंदिर, शिवना</p>
-            <p>ता. सिल्लोड</p> 
-            <p>जि.औरंगाबाद</p>
-            <p>पिन कोड - 431132</p>
-            <a href="https://goo.gl/maps/zZSpivWLLdT2" target="_blank">Map Location</a>
-            </div>
-
-          <div class="col-lg-6 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              <strong>Phone: <a href="tel:918041426645"><i class="bi bi-phone"></i> +91 8041426645</a></strong>
-              <br>
-              <strong>Whatsapp:  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
-                    <i class="bi bi-whatsapp"></i> +91 8041426645
-                  </a></strong>
-              
-                 
-            </p>
-
-            <div class="social-links">
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>शिवाई मंदिर, शिवना</strong>. सर्व हक्क राखीव
-      </div>
-      <div class="credits">
-        Designed by <a href="https://www.credencesolutions.in/">CredenceSolutions</a>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'website/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'website/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'website/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'website/vendor/swiper/swiper-bundle.min.js' %}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'website/js/main.js' %}"></script>
-
-</body>
-
-</html>
+  {% endblock %}

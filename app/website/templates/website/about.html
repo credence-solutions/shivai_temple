@@ -1,0 +1,111 @@
+{% extends 'website/base.html' %}
+
+{% load static %}
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="{% url 'website:index' %}">Home</a></li>
+          <li>Team</li>
+        </ol>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="{% static 'website/assets/img/about/1.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="tel:918041426645">
+                    <i class="bi bi-phone">8041426645</i>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
+                    <i class="bi bi-whatsapp">8041426645</i>
+                  </a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>श्री. सुभाष आनंदराव होळकर</h4>
+                <span>अध्यक्ष</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{% static 'website/assets/img/about/2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="tel:918041426645">
+                    <i class="bi bi-phone">8041426645</i>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
+                    <i class="bi bi-whatsapp">8041426645</i>
+                  </a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>श्री. विठ्ठलराव धोंडिबा काळे</h4>
+                <span>उपाध्यक्ष</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{% static 'website/assets/img/about/3.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="tel:918041426645">
+                    <i class="bi bi-phone">8041426645</i>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
+                    <i class="bi bi-whatsapp">8041426645</i>
+                  </a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>श्री. राजधर माणिकराव राऊत </h4>
+                <span>सचिव</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="{% static 'website/assets/img/about/4.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="tel:918041426645">
+                    <i class="bi bi-phone">8041426645</i>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?phone=918041426645" target="_blank">
+                    <i class="bi bi-whatsapp">8041426645</i>
+                  </a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>श्री. रमेश तोताराम जामदार</h4>
+                <span>कोषाध्यक्ष </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+  </main><!-- End #main -->
+  
+  {% endblock %}
