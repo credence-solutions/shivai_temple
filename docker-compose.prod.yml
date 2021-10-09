@@ -22,9 +22,9 @@ services:
     depends_on:
       - web
     environment:
-      - VIRTUAL_HOST=shivaitemple.in,www.shivaitemple.in
+      - VIRTUAL_HOST=shivaidevishivna.in,www.shivaidevishivna.in
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=shivaitemple.in,www.shivaitemple.in
+      - LETSENCRYPT_HOST=shivaidevishivna.in,www.shivaidevishivna.in
       - LETSENCRYPT_EMAIL=info@credencesolutions.in
 
 networks:
