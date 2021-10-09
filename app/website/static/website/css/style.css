@@ -962,7 +962,7 @@ section {
 }
 .team .member .social a {
   transition: color 0.3s;
-  color: #fff;
+  color: #000000;
   margin: 0 10px;
   display: inline-flex;
   align-items: center;
