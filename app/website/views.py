@@ -17,3 +17,7 @@ def gallery(request):
 
 def contact(request):
     return render(request, 'website/contact.html')
+
+
+def donation(request):
+    return render(request, 'website/donation.html')

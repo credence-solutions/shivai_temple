@@ -126,3 +126,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtppro.zoho.in'
+EMAIL_HOST_USER = 'shivaidevi@credencesolutions.in'
+DEFAULT_FROM_EMAIL = "Shivai Devi Trust <shivaidevi@credencesolutions.in>"
+EMAIL_HOST_PASSWORD = 'Oracle@00'
+EMAIL_PORT = 587
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
