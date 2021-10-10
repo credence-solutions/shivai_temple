@@ -447,9 +447,11 @@ section {
   padding-bottom: 15px;
   background: #fff;
 }
-.about .count-box {
+
+/*.about .count-box {
   width: 100%;
-}
+}*/
+
 .about .count-box i {
   display: block;
   font-size: 48px;
@@ -944,6 +946,10 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+.center-horizontally {
+  justify-content: center;
+}
+
 .team {
   background: #fff;
 }
@@ -954,6 +960,8 @@ section {
 .team .member .member-img {
   position: relative;
   overflow: hidden;
+  border: 5px solid #5a4545;
+  border-radius: 30px;
 }
 .team .member .social {
   position: absolute;
@@ -977,7 +985,7 @@ section {
   justify-content: center;
 }
 .team .member .social a:hover {
-  color: #94c045;
+  color: #e90303;
 }
 .team .member .social i {
   font-size: 18px;
