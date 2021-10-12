@@ -396,10 +396,11 @@ section {
   margin-bottom: 20px;
   padding-bottom: 0;
   font-family: "Poppins", sans-serif;
-  color: #0a0a0a;
+  color: #d70fef;
 }
 .section-title p {
   margin-bottom: 0;
+  color: #007ad1;
 }
 
 /*--------------------------------------------------------------
