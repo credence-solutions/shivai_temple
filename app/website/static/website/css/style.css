@@ -656,11 +656,11 @@ section {
   cursor: pointer;
   display: inline-block;
   padding: 8px 20px 10px 20px;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #4d4643;
+  color: #ff046c;
   transition: all 0.3s;
   border-radius: 4px;
 }
