@@ -319,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
+  font-size: 55px;
   font-weight: 700;
   line-height: 120px;
   color: #00ff14;
@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero h2 {
   color: #ffffff;
   margin-bottom: 50px;
-  font-size: 30px;
+  font-size: 40px;
 }
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
@@ -356,12 +356,12 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
   }
   #hero h1 {
-    font-size: 28px;
+    font-size: 35px;
     line-height: 36px;
   }
   #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 28px;
+    line-height: 28px;
     margin-bottom: 30px;
   }
   #hero .hero-container {
@@ -396,11 +396,13 @@ section {
   margin-bottom: 20px;
   padding-bottom: 0;
   font-family: "Poppins", sans-serif;
-  color: #d70fef;
+  color: #265052;
 }
 .section-title p {
   margin-bottom: 0;
   color: #007ad1;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 /*--------------------------------------------------------------
@@ -615,7 +617,7 @@ section {
   padding: 50px 0;
 }
 .cta h3 {
-  color: #8d0606;
+  color: #e33939;
   font-size: 25px;
   font-weight: 600;
 }
@@ -838,7 +840,7 @@ section {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #3c4133;
+  color: #327815;
 }
 .contact .info p {
   padding: 0 0 0 60px;
