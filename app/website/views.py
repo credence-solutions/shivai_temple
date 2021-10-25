@@ -21,3 +21,7 @@ def contact(request):
 
 def donation(request):
     return render(request, 'website/donation.html')
+
+
+def places(request):
+    return render(request, 'website/places.html')

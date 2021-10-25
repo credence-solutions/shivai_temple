@@ -1,0 +1,80 @@
+{% extends 'website/base.html' %}
+
+{% load static %}
+{% block title %}शिवाई मंदिर, शिवना | Home{% endblock title %}
+{% block content %}
+
+  
+  <main id="main">
+  
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title pt-5">
+          <h2>प्रेक्षणीय स्थळे</h2>
+          <p>जवळपास असणाऱ्या प्रेक्षणीय स्थळांची माहिती</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'website/assets/img/amsari.jpg' %});">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35553.74796827794!2d75.78787896911682!3d20.50100293077938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd980b4cadcbd8b%3A0xf1ef41635b6f4060!2sShree%20Ambrishi%20Mahadev%20Mandir!5e0!3m2!1sen!2sin!4v1632994367128!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h3>श्री. अंबॠषी महादेव मंदिर</h3>
+                  <p>आमसरी, शिवना, महाराष्ट्र - 431118.</p>
+                </h5>
+                <div class="read-more"><a href="{% url 'website:gallery' %}"><i class="bi bi-arrow-right"></i>फोटो बघा</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'website/assets/img/ajanta.jpg' %});">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.8854980970664!2d75.70106341532728!3d20.551865309261952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd97f7014a75e43%3A0x7ca8d7c57639691f!2sAjanta%20Caves!5e0!3m2!1sen!2sin!4v1632994712457!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h3>जगप्रसिद्ध अजिंठा लेणी</h3>
+                  <p>अजिंठा, महाराष्ट्र - 431118.</p>
+                </h5>
+                <div class="read-more"><a href="{% url 'website:gallery' %}"><i class="bi bi-arrow-right"></i>फोटो बघा</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'website/assets/img/anwa.jpg' %});">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6288.596251498234!2d75.77818010115544!3d20.414955840618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bda2b8dbaeb6a9b%3A0x4d71b3ba1fbf297b!2sAjubai%20Saunstan%20Anva!5e0!3m2!1sen!2sin!4v1633686219755!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h3>श्री. आजुबाई संस्थान</h3>
+                  <p>अन्वा, महाराष्ट्र - 431112.</p>
+                </h5>
+                <div class="read-more"><a href="{% url 'website:gallery' %}"><i class="bi bi-arrow-right"></i>फोटो बघा</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'website/assets/img/dhotra.jpg' %});">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29908.078380655246!2d75.7470403038692!3d20.444244286862688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bda2b0d995effdb%3A0xacd00b3646a17d62!2sSiddeshwar%20Maharaj%20Sansthan!5e0!3m2!1sen!2sin!4v1633687102250!5m2!1sen!2sin" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h3>सिद्धेश्वर महाराज संस्थान</h3>
+                  <p>धोत्रा, महाराष्ट्र - 431112.</p>
+                </h5>
+                <div class="read-more"><a href="{% url 'website:gallery' %}"><i class="bi bi-arrow-right"></i>फोटो बघा</a></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+    
+  </main><!-- End #main -->
+
+  {% endblock %}
