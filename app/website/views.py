@@ -7,6 +7,10 @@ def index(request):
     return render(request, 'website/index.html')
 
 
+def navratri(request):
+    return render(request, 'website/navratri.html')
+
+
 def about(request):
     return render(request, 'website/about.html')
 
