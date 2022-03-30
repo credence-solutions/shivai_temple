@@ -588,6 +588,15 @@ section {
   border-radius: 0;
 }
 
+.about h4{
+  text-align: center;
+  margin-bottom: 3px;
+  color: #b40846;
+  font-weight: 500;
+  font-size: 18px;
+} 
+
+
 @-webkit-keyframes pulsate-btn {
   0% {
     transform: scale(0.6, 0.6);

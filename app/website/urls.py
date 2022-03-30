@@ -10,6 +10,8 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('contact/', views.contact, name='contact'),
     path('donation/', views.donation, name='donation'),
-    path('places/', views.places, name='places')
+    path('places/', views.places, name='places'),
+    path('balaji_mandir/', views.balaji_mandir, name='balaji_mandir')
+
 
 ]

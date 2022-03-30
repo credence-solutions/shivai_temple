@@ -29,3 +29,6 @@ def donation(request):
 
 def places(request):
     return render(request, 'website/places.html')
+
+def balaji_mandir(request):
+    return render(request, 'website/balaji_mandir.html')
