@@ -1,8 +1,73 @@
-{% extends 'website/base.html' %}
+<!DOCTYPE html>
+<html lang="mr">
 
-{% load static %}
-{% block title %}बालाजी मंदिर संस्थान, शिवना | About Us{% endblock title %}
-{% block content %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title></title>
+
+  <meta content="It is a temple website. The temple resides in Shivna, Maharashtra which is near to Ajanta caves. There are many places to visit " name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YX6G8W9V64"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YX6G8W9V64');
+  </script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html">शिवाई मंदिर</a></h1>
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="navratri.html">Navratri</a></li>
+          <li><a href="places.html">Places to Visit</a></li>
+          <li><a href="about.html">Shivai Mandir Team</a></li> 
+          <li><a href="balaji_mandir.html">Balaji Mandir Team</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <!--<li><a href="donation">Donate</a></li>-->
+          <li><a href="https://goo.gl/maps/zZSpivWLLdT2" target="_blank">Location</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+  <!-- ======= End Header ======= -->
 
   <main id="main">
 
@@ -10,7 +75,7 @@
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
         <ol>
-          <li><a href="{% url 'website:index' %}">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li>Team</li>
         </ol>
       </div>
@@ -30,7 +95,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/Valuba_Raut.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/Valuba_Raut.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919860907942">
                     <i class="bi bi-phone"></i>&nbsp;98609&nbsp;07942
@@ -52,7 +117,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/kashinath_kale.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/kashinath_kale.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919764202801">
                     <i class="bi bi-phone"></i>&nbsp;97642&nbsp;02801
@@ -74,7 +139,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/dhananjay_mayur.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/dhananjay_mayur.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919860666317">
                     <i class="bi bi-phone"></i>&nbsp;98606&nbsp;66317
@@ -96,7 +161,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/shubhash_kale.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/shubhash_kale.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:918390002955">
                     <i class="bi bi-phone"></i>&nbsp;83900&nbsp;02955
@@ -118,7 +183,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/bhaskar_raut.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/bhaskar_raut.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:918806942720">
                     <i class="bi bi-phone"></i>&nbsp;88069&nbsp;42720
@@ -140,7 +205,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/bhausaheb_kale.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/bhausaheb_kale.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919960793911">
                     <i class="bi bi-phone"></i>&nbsp;99607&nbsp;93911
@@ -162,7 +227,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/tulshidas_shinde.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/tulshidas_shinde.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919021217809">
                     <i class="bi bi-phone"></i>&nbsp;90212&nbsp;17809
@@ -184,7 +249,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/gajanan_bhawsar.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/gajanan_bhawsar.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919404983141">
                     <i class="bi bi-phone"></i>&nbsp;94049&nbsp;83141
@@ -206,7 +271,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/madhukar_kale.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/madhukar_kale.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919970661904">
                     <i class="bi bi-phone"></i>&nbsp;99706&nbsp;61904
@@ -227,7 +292,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/uttam_kale.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/uttam_kale.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919730222200">
                     <i class="bi bi-phone"></i>&nbsp;97302&nbsp;22200
@@ -249,7 +314,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/gajanan_raut.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/gajanan_raut.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919922360035">
                     <i class="bi bi-phone"></i>&nbsp;99223&nbsp;60035
@@ -271,7 +336,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/subhash_zalte.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/subhash_zalte.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919021590929">
                     <i class="bi bi-phone"></i>&nbsp;90215&nbsp;90929
@@ -293,7 +358,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch center-horizontally">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'website/assets/img/balaji_about/kishor_gupta.jpg' %}" class="img-fluid" alt="">
+                <img src="assets/img/balaji_about/kishor_gupta.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="tel:919960779691">
                     <i class="bi bi-phone"></i>&nbsp;99607&nbsp;79691
@@ -319,4 +384,91 @@
 
   </main><!-- End #main -->
   
-  {% endblock %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-newsletter" style="padding-bottom:15px;">
+              <h4>श्री. शिवाई देवी संस्थान, शिवना</h4>
+                <p>
+                  शिवाई मंदिर, शिवना <br>
+                  ता. सिल्लोड, जि.औरंगाबाद<br>
+                  पिन कोड - 431132
+                  <br><br>
+                  <strong>Phone:</strong> 
+                  <a href="tel:919881734529">
+                    +91 9881734529<br>
+                  </a>
+                  <strong>Email:</strong> 
+                  <a href="mailto:info@ateventservices.in">
+                    info@shivaidevishivna.in<br>
+                  </a>
+                </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links footer-newsletter">
+            <h4>महत्त्वाचे लिंक</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="about.html">आमची संस्था</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="contact.html">संपर्क</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">देणगी</a></li>
+              </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links footer-newsletter">
+            <h4>इतर माहिती</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="assets/img/aarati.pdf" target="_blank">आरती संग्रह</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://infosrushti.com/shivna/" target="_blank">शिवना संग्रहालय</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="http://renukanandan.epizy.com" target="_blank">झाल्टे कुलवृत्तांत</a></li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 footer-links footer-newsletter" >
+            <h4>सोशल मीडिया</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/shivaidevishivna/" target="_blank">Facebook</a></li>
+                <!--<li><i class="bx bx-chevron-right"></i> <a href="https://www.instagram.com/" target="_blank">Instagram</a></li>-->
+                <li><i class="bx bx-chevron-right"></i> <a href="https://api.whatsapp.com/send?phone=919881734529" target="_blank">Whatsapp</a></li>
+              </ul>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+    <div class="container d-md-flex py-4">
+        <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+            &copy; Copyright <span><a href="index">Shivai Devi Shivna</a></span>. All Rights Reserved
+          </div>
+        </div>
+        <div class="credits text-center text-md-right pt-3 pt-md-0">
+        Designed by <a href="https://www.credencesolutions.in/" target="_blank">Credence Solutions</a>
+      </div>
+    </div>
+    
+  </footer>
+  <!-- ======= End Footer ======= -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
