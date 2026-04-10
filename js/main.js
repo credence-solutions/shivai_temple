@@ -255,4 +255,35 @@
     })
   });
 
+  /**
+   * Activate navbar links based on current page
+   */
+  window.addEventListener('load', () => {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = select('.navbar a', true);
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const linkHref = link.getAttribute('href');
+
+      // Check if link matches current page
+      if (linkHref === currentPage ||
+          (currentPage === '' && linkHref === 'index.html') ||
+          (currentPage === 'index.html' && linkHref === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  /**
+   * Update active navbar link on click
+   */
+  on('click', '.navbar a', function(e) {
+    const navLinks = select('.navbar a', true);
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+    this.classList.add('active');
+  }, true);
+
 })()
