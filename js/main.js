@@ -286,4 +286,127 @@
     this.classList.add('active');
   }, true);
 
+  /**
+   * Daily Thought/Shloka Rotation
+   */
+  const thoughts = [
+    {
+      marathi: "या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता। नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥",
+      english: "The Goddess resides in all beings in the form of power. Salutations to Her, salutations to Her, salutations to Her again and again.",
+      source: "दुर्गा सप्तशती"
+    },
+    {
+      marathi: "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके। शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते॥",
+      english: "O Goddess, you are the auspicious of all auspicious, the consort of Shiva, the fulfiller of all desires. O three-eyed Gauri, Narayani, salutations to you.",
+      source: "दुर्गा सप्तशती"
+    },
+    {
+      marathi: "या देवी सर्वभूतेषु मातृरूपेण संस्थिता। नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥",
+      english: "The Goddess who resides in all beings in the form of mother. Salutations to Her, salutations to Her, salutations to Her again and again.",
+      source: "दुर्गा सप्तशती"
+    },
+    {
+      marathi: "या देवी सर्वभूतेषु बुद्धिरूपेण संस्थिता। नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥",
+      english: "The Goddess who resides in all beings in the form of intelligence. Salutations to Her, salutations to Her, salutations to Her again and again.",
+      source: "दुर्गा सप्तशती"
+    },
+    {
+      marathi: "शरणागतदीनार्तपरित्राणपरायणे। सर्वस्यार्तिहरे देवि नारायणि नमोऽस्तु ते॥",
+      english: "O Goddess, you are devoted to protecting the helpless who surrender to you. O Narayani, you remove all sufferings, salutations to you.",
+      source: "दुर्गा सप्तशती"
+    }
+  ];
+
+  let currentThoughtIndex = 0;
+
+  function rotateThought() {
+    const thoughtText = select('#dailyThought');
+    const thoughtTranslation = select('#thoughtTranslation');
+    const thoughtSource = select('.thought-source');
+
+    if (thoughtText && thoughtTranslation) {
+      // Add fade out class
+      thoughtText.style.opacity = '0';
+      thoughtTranslation.style.opacity = '0';
+
+      setTimeout(() => {
+        currentThoughtIndex = (currentThoughtIndex + 1) % thoughts.length;
+        const thought = thoughts[currentThoughtIndex];
+
+        thoughtText.textContent = thought.marathi;
+        thoughtTranslation.textContent = thought.english;
+        thoughtSource.textContent = '- ' + thought.source;
+
+        // Fade in
+        thoughtText.style.transition = 'opacity 0.8s ease';
+        thoughtTranslation.style.transition = 'opacity 0.8s ease';
+        thoughtText.style.opacity = '1';
+        thoughtTranslation.style.opacity = '1';
+      }, 400);
+    }
+  }
+
+  // Rotate thought every 10 seconds
+  if (select('#dailyThought')) {
+    setInterval(rotateThought, 10000);
+  }
+
+  /**
+   * Dark Mode Toggle
+   */
+  const darkModeToggle = select('#darkModeToggle');
+  if (darkModeToggle) {
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      // Save preference
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  }
+
+  /**
+   * Text Size Adjuster
+   */
+  let textSizeLevel = parseInt(localStorage.getItem('textSize')) || 2; // Default medium
+  const textSizes = ['text-small', 'text-medium', 'text-large', 'text-xlarge'];
+
+  function applyTextSize() {
+    document.body.classList.remove(...textSizes);
+    document.body.classList.add(textSizes[textSizeLevel]);
+    localStorage.setItem('textSize', textSizeLevel);
+  }
+
+  // Apply saved text size on load
+  applyTextSize();
+
+  const textSizeIncrease = select('#textSizeIncrease');
+  const textSizeDecrease = select('#textSizeDecrease');
+
+  if (textSizeIncrease) {
+    textSizeIncrease.addEventListener('click', () => {
+      if (textSizeLevel < textSizes.length - 1) {
+        textSizeLevel++;
+        applyTextSize();
+      }
+    });
+  }
+
+  if (textSizeDecrease) {
+    textSizeDecrease.addEventListener('click', () => {
+      if (textSizeLevel > 0) {
+        textSizeLevel--;
+        applyTextSize();
+      }
+    });
+  }
+
 })()
