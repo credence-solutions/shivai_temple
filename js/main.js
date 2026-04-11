@@ -544,11 +544,36 @@
   };
   let currentLangIndex = 0;
 
-  // Get saved language or default to Marathi
-  const savedLang = localStorage.getItem('language') || 'mr';
-  currentLangIndex = languages.indexOf(savedLang);
-  document.documentElement.setAttribute('lang', savedLang);
-  document.body.setAttribute('lang', savedLang);
+  // Function to update all language text elements
+  function updateLanguageText(lang) {
+    const langElements = select('.lang-text', true);
+
+    langElements.forEach(element => {
+      const mrText = element.getAttribute('data-mr');
+      const hiText = element.getAttribute('data-hi');
+      const enText = element.getAttribute('data-en');
+
+      // Update text based on language
+      if (lang === 'mr' && mrText) {
+        element.textContent = mrText;
+      } else if (lang === 'hi' && hiText) {
+        element.textContent = hiText;
+      } else if (lang === 'en' && enText) {
+        element.textContent = enText;
+      }
+    });
+  }
+
+  // Always start with Marathi
+  const initialLang = 'mr';
+  currentLangIndex = 0;
+  document.documentElement.setAttribute('lang', initialLang);
+  document.body.setAttribute('lang', initialLang);
+
+  // Set initial Marathi text on page load
+  window.addEventListener('load', () => {
+    updateLanguageText('mr');
+  });
 
   const langToggle = select('#langToggle');
   if (langToggle) {
@@ -560,7 +585,9 @@
       // Update language
       document.documentElement.setAttribute('lang', newLang);
       document.body.setAttribute('lang', newLang);
-      localStorage.setItem('language', newLang);
+
+      // Update all text elements
+      updateLanguageText(newLang);
 
       // Show indicator
       showLanguageIndicator(newLang);
