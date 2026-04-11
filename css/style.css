@@ -92,8 +92,7 @@ body.dark-mode .about .container {
 body.dark-mode .portfolio,
 body.dark-mode .events,
 body.dark-mode .daily-thought,
-body.dark-mode .live-darshan,
-body.dark-mode .quick-info {
+body.dark-mode .live-darshan {
   background: #1a1a1a;
 }
 
@@ -2184,12 +2183,8 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Quick Info Section
+# Quick Info Section - REMOVED (was duplicate of About section info)
 --------------------------------------------------------------*/
-.quick-info {
-  padding: 60px 0;
-  background: var(--bg-gradient);
-}
 
 .info-box {
   text-align: center;
