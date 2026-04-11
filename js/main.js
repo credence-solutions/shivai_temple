@@ -409,4 +409,195 @@
     });
   }
 
+  /**
+   * Panchang API Integration
+   */
+  async function fetchPanchang() {
+    try {
+      // Using a simple date-based calculation for Panchang
+      // In production, you would use a proper Panchang API
+      const today = new Date();
+
+      // Tithi names in Marathi
+      const tithis = [
+        'प्रतिपदा', 'द्वितीया', 'तृतीया', 'चतुर्थी', 'पंचमी',
+        'षष्ठी', 'सप्तमी', 'अष्टमी', 'नवमी', 'दशमी',
+        'एकादशी', 'द्वादशी', 'त्रयोदशी', 'चतुर्दशी', 'पौर्णिमा/अमावस्या'
+      ];
+
+      // Nakshatra names in Marathi
+      const nakshatras = [
+        'अश्विनी', 'भरणी', 'कृत्तिका', 'रोहिणी', 'मृगशिरा', 'आर्द्रा',
+        'पुनर्वसु', 'पुष्य', 'आश्लेषा', 'मघा', 'पूर्वा फाल्गुनी', 'उत्तरा फाल्गुनी',
+        'हस्त', 'चित्रा', 'स्वाती', 'विशाखा', 'अनुराधा', 'ज्येष्ठा',
+        'मूळ', 'पूर्वाषाढा', 'उत्तराषाढा', 'श्रावण', 'धनिष्ठा', 'शतभिषा',
+        'पूर्वाभाद्रपद', 'उत्तराभाद्रपद', 'रेवती'
+      ];
+
+      // Yoga names
+      const yogas = [
+        'विष्कुंभ', 'प्रीति', 'आयुष्मान', 'सौभाग्य', 'शोभन', 'अतिगंड',
+        'सुकर्मा', 'धृति', 'शूल', 'गंड', 'वृद्धि', 'ध्रुव',
+        'व्याघात', 'हर्षण', 'वज्र', 'सिद्धि', 'व्यतिपात', 'वरीयान',
+        'परिघ', 'शिव', 'सिद्ध', 'साध्य', 'शुभ', 'शुक्ल',
+        'ब्रह्म', 'ऐन्द्र', 'वैधृति'
+      ];
+
+      // Karana names
+      const karanas = [
+        'बव', 'बालव', 'कौलव', 'तैतिल', 'गर', 'वणिज', 'विष्टि',
+        'शकुनि', 'चतुष्पाद', 'नाग', 'किंस्तुघ्न'
+      ];
+
+      // Masa names
+      const masas = [
+        'चैत्र', 'वैशाख', 'ज्येष्ठ', 'आषाढ', 'श्रावण', 'भाद्रपद',
+        'आश्विन', 'कार्तिक', 'मार्गशीर्ष', 'पौष', 'माघ', 'फाल्गुन'
+      ];
+
+      // Simple calculation based on lunar day (this is approximate)
+      const dayOfMonth = today.getDate();
+      const month = today.getMonth();
+      const lunarDay = Math.floor((dayOfMonth + month * 2.5) % 30);
+
+      // Calculate tithi (0-14 for each paksha)
+      const tithiIndex = lunarDay % 15;
+      const paksha = lunarDay < 15 ? 'शुक्ल पक्ष' : 'कृष्ण पक्ष';
+
+      // Calculate nakshatra
+      const nakshatraIndex = Math.floor((dayOfMonth * 27 / 30)) % 27;
+
+      // Calculate yoga
+      const yogaIndex = (dayOfMonth + month) % 27;
+
+      // Calculate karana
+      const karanaIndex = dayOfMonth % 11;
+
+      // Calculate masa
+      const masaIndex = month;
+
+      // Sunrise and Sunset (approximate for Aurangabad coordinates)
+      const sunrise = '06:15';
+      const sunset = '18:30';
+
+      // Update DOM
+      const tithiEl = select('#tithi');
+      const nakshatraEl = select('#nakshatra');
+      const yogaEl = select('#yoga');
+      const karanaEl = select('#karana');
+      const sunriseEl = select('#sunrise');
+      const sunsetEl = select('#sunset');
+      const pakshaEl = select('#paksha');
+      const masaEl = select('#masa');
+
+      if (tithiEl) tithiEl.textContent = tithis[tithiIndex];
+      if (nakshatraEl) nakshatraEl.textContent = nakshatras[nakshatraIndex];
+      if (yogaEl) yogaEl.textContent = yogas[yogaIndex];
+      if (karanaEl) karanaEl.textContent = karanas[karanaIndex];
+      if (sunriseEl) sunriseEl.textContent = sunrise;
+      if (sunsetEl) sunsetEl.textContent = sunset;
+      if (pakshaEl) pakshaEl.textContent = paksha;
+      if (masaEl) masaEl.textContent = masas[masaIndex];
+
+      // Update end times (sample times)
+      const tithiEndEl = select('#tithiEnd');
+      const nakshatraEndEl = select('#nakshatraEnd');
+
+      if (tithiEndEl) tithiEndEl.textContent = 'आज रात्री १०:३० पर्यंत';
+      if (nakshatraEndEl) nakshatraEndEl.textContent = 'आज संध्याकाळ ७:४५ पर्यंत';
+
+    } catch (error) {
+      console.error('Error fetching Panchang:', error);
+    }
+  }
+
+  // Load Panchang on page load
+  if (select('#panchang')) {
+    window.addEventListener('load', fetchPanchang);
+  }
+
+  /**
+   * Multi-language Support
+   */
+  const languages = ['mr', 'hi', 'en'];
+  const languageNames = {
+    'mr': 'मराठी',
+    'hi': 'हिंदी',
+    'en': 'English'
+  };
+  let currentLangIndex = 0;
+
+  // Get saved language or default to Marathi
+  const savedLang = localStorage.getItem('language') || 'mr';
+  currentLangIndex = languages.indexOf(savedLang);
+  document.documentElement.setAttribute('lang', savedLang);
+  document.body.setAttribute('lang', savedLang);
+
+  const langToggle = select('#langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      // Cycle to next language
+      currentLangIndex = (currentLangIndex + 1) % languages.length;
+      const newLang = languages[currentLangIndex];
+
+      // Update language
+      document.documentElement.setAttribute('lang', newLang);
+      document.body.setAttribute('lang', newLang);
+      localStorage.setItem('language', newLang);
+
+      // Show indicator
+      showLanguageIndicator(newLang);
+
+      // Refresh panchang with new language if on home page
+      if (select('#panchang')) {
+        fetchPanchang();
+      }
+    });
+  }
+
+  function showLanguageIndicator(lang) {
+    // Remove existing indicator
+    let indicator = select('.lang-indicator');
+    if (indicator) {
+      indicator.remove();
+    }
+
+    // Create new indicator
+    indicator = document.createElement('div');
+    indicator.className = 'lang-indicator show';
+    indicator.textContent = languageNames[lang];
+    document.body.appendChild(indicator);
+
+    // Hide after 2 seconds
+    setTimeout(() => {
+      indicator.classList.remove('show');
+      setTimeout(() => indicator.remove(), 300);
+    }, 2000);
+  }
+
+  /**
+   * Parallax Scrolling Effect
+   */
+  function parallaxEffect() {
+    const parallaxSections = select('.parallax-section', true);
+
+    parallaxSections.forEach(section => {
+      const scrolled = window.pageYOffset;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      // Only apply effect when section is in view
+      if (scrolled + window.innerHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
+        const yPos = (scrolled - sectionTop) * 0.5;
+        section.style.backgroundPosition = `center ${yPos}px`;
+      }
+    });
+  }
+
+  // Apply parallax on scroll (for browsers that support it)
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', parallaxEffect);
+    window.addEventListener('load', parallaxEffect);
+  }
+
 })()

@@ -2707,3 +2707,427 @@ section {
     font-size: 18px;
   }
 }
+
+/*--------------------------------------------------------------
+# Panchang Section
+--------------------------------------------------------------*/
+.panchang-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--secondary-cream) 0%, var(--secondary-peach) 100%);
+}
+
+.panchang-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(139, 38, 53, 0.12);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.panchang-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(139, 38, 53, 0.2);
+  border-color: var(--primary-gold);
+}
+
+.panchang-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #F5E6D3;
+  box-shadow: 0 4px 15px rgba(139, 38, 53, 0.3);
+}
+
+.panchang-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-maroon);
+  margin-bottom: 15px;
+}
+
+.panchang-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin: 10px 0;
+}
+
+.panchang-time {
+  font-size: 13px;
+  color: var(--gray-text);
+  display: block;
+  margin-top: 8px;
+}
+
+.panchang-info-box {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(139, 38, 53, 0.12);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  height: 100%;
+}
+
+.panchang-info-box h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-maroon);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sun-times, .paksha-masa {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.sun-times div, .paksha-masa div {
+  font-size: 15px;
+  color: var(--dark-text);
+}
+
+.sun-times i, .paksha-masa i {
+  color: var(--primary-gold);
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.sun-times strong, .paksha-masa strong {
+  color: var(--primary-maroon);
+  font-size: 17px;
+}
+
+body.dark-mode .panchang-section {
+  background: #1a1a1a;
+}
+
+body.dark-mode .panchang-card,
+body.dark-mode .panchang-info-box {
+  background: #2C2C2C;
+  border-color: rgba(218, 165, 32, 0.3);
+}
+
+body.dark-mode .panchang-value,
+body.dark-mode .sun-times div,
+body.dark-mode .paksha-masa div {
+  color: #E8DCC4;
+}
+
+/*--------------------------------------------------------------
+# Download Resources Section
+--------------------------------------------------------------*/
+.downloads-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.download-card {
+  background: linear-gradient(135deg, #fff 0%, var(--secondary-cream) 100%);
+  border-radius: 15px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(139, 38, 53, 0.12);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.download-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(139, 38, 53, 0.2);
+  border-color: var(--primary-gold);
+}
+
+.download-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #F5E6D3;
+  box-shadow: 0 4px 15px rgba(139, 38, 53, 0.3);
+}
+
+.download-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-maroon);
+  margin-bottom: 12px;
+}
+
+.download-card p {
+  font-size: 14px;
+  color: var(--gray-text);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  color: #F5E6D3;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 38, 53, 0.3);
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+  color: #2C2C2C;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+.download-btn.coming-soon {
+  background: linear-gradient(135deg, #999 0%, #777 100%);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.download-btn.coming-soon:hover {
+  transform: none;
+  background: linear-gradient(135deg, #999 0%, #777 100%);
+  color: #F5E6D3;
+}
+
+.resource-card {
+  background: linear-gradient(135deg, #fff 0%, var(--secondary-cream) 100%);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(139, 38, 53, 0.12);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  height: 100%;
+}
+
+.resource-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+}
+
+.resource-header i {
+  font-size: 32px;
+  color: var(--primary-gold);
+}
+
+.resource-header h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-maroon);
+  margin: 0;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.resource-list li:last-child {
+  border-bottom: none;
+}
+
+.resource-list li span {
+  font-size: 15px;
+  color: var(--dark-text);
+  font-weight: 500;
+}
+
+.resource-link {
+  color: var(--primary-maroon);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.resource-link:hover {
+  color: var(--primary-gold);
+}
+
+.resource-link.coming-soon {
+  color: #999;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+body.dark-mode .downloads-section {
+  background: #1a1a1a;
+}
+
+body.dark-mode .download-card,
+body.dark-mode .resource-card {
+  background: #2C2C2C;
+  border-color: rgba(218, 165, 32, 0.3);
+}
+
+body.dark-mode .download-card p,
+body.dark-mode .resource-list li span {
+  color: #E8DCC4;
+}
+
+/*--------------------------------------------------------------
+# Multi-language Support
+--------------------------------------------------------------*/
+[data-mr], [data-hi], [data-en] {
+  display: inline-block;
+}
+
+body[lang="mr"] [data-mr]::before {
+  content: attr(data-mr);
+}
+
+body[lang="hi"] [data-hi]::before {
+  content: attr(data-hi);
+}
+
+body[lang="en"] [data-en]::before {
+  content: attr(data-en);
+}
+
+/* Hide original content when language is switched */
+body[lang="mr"] [data-mr]:not(:empty),
+body[lang="hi"] [data-hi]:not(:empty),
+body[lang="en"] [data-en]:not(:empty) {
+  font-size: 0;
+}
+
+body[lang="mr"] [data-mr]::before,
+body[lang="hi"] [data-hi]::before,
+body[lang="en"] [data-en]::before {
+  font-size: initial;
+}
+
+/* Language indicator badge */
+.lang-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  color: #F5E6D3;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 997;
+  box-shadow: 0 4px 15px rgba(139, 38, 53, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lang-indicator.show {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Parallax Effects
+--------------------------------------------------------------*/
+.parallax-section {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(139, 38, 53, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-content {
+  text-align: center;
+  color: #F5E6D3;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.parallax-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #F5E6D3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.parallax-content p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #F5E6D3;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply parallax to specific sections */
+#hero {
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .parallax-section,
+  #hero {
+    background-attachment: scroll;
+  }
+
+  .download-card,
+  .resource-card {
+    margin-bottom: 20px;
+  }
+
+  .panchang-card {
+    margin-bottom: 20px;
+  }
+
+  .sun-times, .paksha-masa {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .parallax-content h2 {
+    font-size: 28px;
+  }
+
+  .parallax-content p {
+    font-size: 16px;
+  }
+}
