@@ -418,6 +418,23 @@
       // In production, you would use a proper Panchang API
       const today = new Date();
 
+      // Format and display today's date
+      const dateOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+
+      const currentLang = document.body.getAttribute('lang') || 'mr';
+      let locale = 'mr-IN';
+      if (currentLang === 'hi') locale = 'hi-IN';
+      if (currentLang === 'en') locale = 'en-IN';
+
+      const formattedDate = today.toLocaleDateString(locale, dateOptions);
+      const todayDateEl = select('#todayDate');
+      if (todayDateEl) todayDateEl.textContent = formattedDate;
+
       // Tithi names in Marathi
       const tithis = [
         'प्रतिपदा', 'द्वितीया', 'तृतीया', 'चतुर्थी', 'पंचमी',

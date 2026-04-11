@@ -118,7 +118,7 @@
               <i class="bi bi-book"></i>
             </div>
             <div class="thought-content">
-              <h3 class="thought-title" data-mr="आजचे विचार" data-hi="आज का विचार" data-en="Daily Thought">आजचे विचार</h3>
+              <h3 class="thought-title"><span class="lang-text" data-mr="आजचे विचार" data-hi="आज का विचार" data-en="Daily Thought">आजचे विचार</span></h3>
               <p class="thought-text" id="dailyThought">
                 या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता। नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥
               </p>
@@ -135,8 +135,23 @@
       <section id="panchang" class="panchang-section">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2 data-mr="आजचे पंचांग" data-hi="आज का पंचांग" data-en="Today's Panchang">आजचे पंचांग</h2>
-            <p data-mr="हिंदू पंचांग माहिती" data-hi="हिंदू पंचांग जानकारी" data-en="Hindu Calendar Information">हिंदू पंचांग माहिती</p>
+            <h2><span class="lang-text" data-mr="आजचे पंचांग" data-hi="आज का पंचांग" data-en="Today's Panchang">आजचे पंचांग</span></h2>
+            <p><span class="lang-text" data-mr="हिंदू पंचांग माहिती" data-hi="हिंदू पंचांग जानकारी" data-en="Hindu Calendar Information">हिंदू पंचांग माहिती</span></p>
+          </div>
+
+          <!-- Today's Date Display -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="panchang-date-card">
+                <div class="date-icon">
+                  <i class="bi bi-calendar-day"></i>
+                </div>
+                <div class="date-content">
+                  <h4><span class="lang-text" data-mr="आजची तारीख" data-hi="आज की तारीख" data-en="Today's Date">आजची तारीख</span></h4>
+                  <p id="todayDate" class="current-date">Loading...</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="row">
@@ -145,7 +160,7 @@
                 <div class="panchang-icon">
                   <i class="bi bi-calendar3"></i>
                 </div>
-                <h4 data-mr="तिथी" data-hi="तिथि" data-en="Tithi">तिथी</h4>
+                <h4><span class="lang-text" data-mr="तिथी" data-hi="तिथि" data-en="Tithi">तिथी</span></h4>
                 <p id="tithi" class="panchang-value">Loading...</p>
                 <span class="panchang-time" id="tithiEnd"></span>
               </div>
@@ -156,7 +171,7 @@
                 <div class="panchang-icon">
                   <i class="bi bi-star"></i>
                 </div>
-                <h4 data-mr="नक्षत्र" data-hi="नक्षत्र" data-en="Nakshatra">नक्षत्र</h4>
+                <h4><span class="lang-text" data-mr="नक्षत्र" data-hi="नक्षत्र" data-en="Nakshatra">नक्षत्र</span></h4>
                 <p id="nakshatra" class="panchang-value">Loading...</p>
                 <span class="panchang-time" id="nakshatraEnd"></span>
               </div>
@@ -167,7 +182,7 @@
                 <div class="panchang-icon">
                   <i class="bi bi-brightness-high"></i>
                 </div>
-                <h4 data-mr="योग" data-hi="योग" data-en="Yoga">योग</h4>
+                <h4><span class="lang-text" data-mr="योग" data-hi="योग" data-en="Yoga">योग</span></h4>
                 <p id="yoga" class="panchang-value">Loading...</p>
                 <span class="panchang-time" id="yogaEnd"></span>
               </div>
@@ -178,7 +193,7 @@
                 <div class="panchang-icon">
                   <i class="bi bi-clock-history"></i>
                 </div>
-                <h4 data-mr="करण" data-hi="करण" data-en="Karana">करण</h4>
+                <h4><span class="lang-text" data-mr="करण" data-hi="करण" data-en="Karana">करण</span></h4>
                 <p id="karana" class="panchang-value">Loading...</p>
                 <span class="panchang-time" id="karanaEnd"></span>
               </div>
@@ -188,16 +203,16 @@
           <div class="row mt-3">
             <div class="col-md-6">
               <div class="panchang-info-box">
-                <h5 data-mr="सूर्योदय आणि सूर्यास्त" data-hi="सूर्योदय और सूर्यास्त" data-en="Sunrise & Sunset">सूर्योदय आणि सूर्यास्त</h5>
+                <h5><span class="lang-text" data-mr="सूर्योदय आणि सूर्यास्त" data-hi="सूर्योदय और सूर्यास्त" data-en="Sunrise & Sunset">सूर्योदय आणि सूर्यास्त</span></h5>
                 <div class="sun-times">
                   <div>
                     <i class="bi bi-sunrise"></i>
-                    <span data-mr="सूर्योदय" data-hi="सूर्योदय" data-en="Sunrise">सूर्योदय</span>:
+                    <span class="lang-text" data-mr="सूर्योदय" data-hi="सूर्योदय" data-en="Sunrise">सूर्योदय</span>:
                     <strong id="sunrise">--:--</strong>
                   </div>
                   <div>
                     <i class="bi bi-sunset"></i>
-                    <span data-mr="सूर्यास्त" data-hi="सूर्यास्त" data-en="Sunset">सूर्यास्त</span>:
+                    <span class="lang-text" data-mr="सूर्यास्त" data-hi="सूर्यास्त" data-en="Sunset">सूर्यास्त</span>:
                     <strong id="sunset">--:--</strong>
                   </div>
                 </div>
@@ -206,14 +221,14 @@
 
             <div class="col-md-6">
               <div class="panchang-info-box">
-                <h5 data-mr="पक्ष आणि मास" data-hi="पक्ष और मास" data-en="Paksha & Masa">पक्ष आणि मास</h5>
+                <h5><span class="lang-text" data-mr="पक्ष आणि मास" data-hi="पक्ष और मास" data-en="Paksha & Masa">पक्ष आणि मास</span></h5>
                 <div class="paksha-masa">
                   <div>
-                    <span data-mr="पक्ष" data-hi="पक्ष" data-en="Paksha">पक्ष</span>:
+                    <span class="lang-text" data-mr="पक्ष" data-hi="पक्ष" data-en="Paksha">पक्ष</span>:
                     <strong id="paksha">--</strong>
                   </div>
                   <div>
-                    <span data-mr="चांद्र मास" data-hi="चंद्र मास" data-en="Lunar Month">चांद्र मास</span>:
+                    <span class="lang-text" data-mr="चांद्र मास" data-hi="चंद्र मास" data-en="Lunar Month">चांद्र मास</span>:
                     <strong id="masa">--</strong>
                   </div>
                 </div>
@@ -405,8 +420,8 @@
       <section id="downloads" class="downloads-section">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2 data-mr="डाउनलोड संसाधने" data-hi="डाउनलोड संसाधन" data-en="Download Resources">डाउनलोड संसाधने</h2>
-            <p data-mr="आरती, मंत्र, वॉलपेपर आणि इतर संसाधने" data-hi="आरती, मंत्र, वॉलपेपर और अन्य संसाधन" data-en="Aarti, Mantras, Wallpapers and other resources">आरती, मंत्र, वॉलपेपर आणि इतर संसाधने</p>
+            <h2><span class="lang-text" data-mr="डाउनलोड संसाधने" data-hi="डाउनलोड संसाधन" data-en="Download Resources">डाउनलोड संसाधने</span></h2>
+            <p><span class="lang-text" data-mr="आरती, मंत्र, वॉलपेपर आणि इतर संसाधने" data-hi="आरती, मंत्र, वॉलपेपर और अन्य संसाधन" data-en="Aarti, Mantras, Wallpapers and other resources">आरती, मंत्र, वॉलपेपर आणि इतर संसाधने</span></p>
           </div>
 
           <div class="row">
@@ -415,10 +430,10 @@
                 <div class="download-icon">
                   <i class="bi bi-file-pdf"></i>
                 </div>
-                <h4 data-mr="आरती संग्रह" data-hi="आरती संग्रह" data-en="Aarti Collection">आरती संग्रह</h4>
-                <p data-mr="शिवाई देवी आरती पीडीएफ" data-hi="शिवाई देवी आरती पीडीएफ" data-en="Shivai Devi Aarti PDF">शिवाई देवी आरती पीडीएफ</p>
+                <h4><span class="lang-text" data-mr="आरती संग्रह" data-hi="आरती संग्रह" data-en="Aarti Collection">आरती संग्रह</span></h4>
+                <p><span class="lang-text" data-mr="शिवाई देवी आरती पीडीएफ" data-hi="शिवाई देवी आरती पीडीएफ" data-en="Shivai Devi Aarti PDF">शिवाई देवी आरती पीडीएफ</span></p>
                 <a href="assets/img/aarati.pdf" download class="download-btn">
-                  <i class="bi bi-download"></i> <span data-mr="डाउनलोड करा" data-hi="डाउनलोड करें" data-en="Download">डाउनलोड करा</span>
+                  <i class="bi bi-download"></i> <span><span class="lang-text" data-mr="डाउनलोड करा" data-hi="डाउनलोड करें" data-en="Download">डाउनलोड करा</span></span>
                 </a>
               </div>
             </div>
@@ -428,10 +443,10 @@
                 <div class="download-icon">
                   <i class="bi bi-book"></i>
                 </div>
-                <h4 data-mr="दुर्गा सप्तशती" data-hi="दुर्गा सप्तशती" data-en="Durga Saptashati">दुर्गा सप्तशती</h4>
-                <p data-mr="संपूर्ण पाठ पीडीएफ" data-hi="संपूर्ण पाठ पीडीएफ" data-en="Complete text PDF">संपूर्ण पाठ पीडीएफ</p>
+                <h4><span class="lang-text" data-mr="दुर्गा सप्तशती" data-hi="दुर्गा सप्तशती" data-en="Durga Saptashati">दुर्गा सप्तशती</span></h4>
+                <p><span class="lang-text" data-mr="संपूर्ण पाठ पीडीएफ" data-hi="संपूर्ण पाठ पीडीएफ" data-en="Complete text PDF">संपूर्ण पाठ पीडीएफ</span></p>
                 <a href="#" class="download-btn coming-soon">
-                  <i class="bi bi-hourglass-split"></i> <span data-mr="लवकरच" data-hi="जल्द ही" data-en="Coming Soon">लवकरच</span>
+                  <i class="bi bi-hourglass-split"></i> <span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Coming Soon">लवकरच</span></span>
                 </a>
               </div>
             </div>
@@ -441,10 +456,10 @@
                 <div class="download-icon">
                   <i class="bi bi-image"></i>
                 </div>
-                <h4 data-mr="HD वॉलपेपर" data-hi="HD वॉलपेपर" data-en="HD Wallpapers">HD वॉलपेपर</h4>
-                <p data-mr="मंदिर फोटो वॉलपेपर" data-hi="मंदिर फोटो वॉलपेपर" data-en="Temple photo wallpapers">मंदिर फोटो वॉलपेपर</p>
+                <h4><span class="lang-text" data-mr="HD वॉलपेपर" data-hi="HD वॉलपेपर" data-en="HD Wallpapers">HD वॉलपेपर</span></h4>
+                <p><span class="lang-text" data-mr="मंदिर फोटो वॉलपेपर" data-hi="मंदिर फोटो वॉलपेपर" data-en="Temple photo wallpapers">मंदिर फोटो वॉलपेपर</span></p>
                 <a href="gallery.html" class="download-btn">
-                  <i class="bi bi-images"></i> <span data-mr="गॅलरी पहा" data-hi="गैलरी देखें" data-en="View Gallery">गॅलरी पहा</span>
+                  <i class="bi bi-images"></i> <span><span class="lang-text" data-mr="गॅलरी पहा" data-hi="गैलरी देखें" data-en="View Gallery">गॅलरी पहा</span></span>
                 </a>
               </div>
             </div>
@@ -454,10 +469,10 @@
                 <div class="download-icon">
                   <i class="bi bi-calendar3"></i>
                 </div>
-                <h4 data-mr="पंचांग कॅलेंडर" data-hi="पंचांग कैलेंडर" data-en="Panchang Calendar">पंचांग कॅलेंडर</h4>
-                <p data-mr="वार्षिक पंचांग २०२६" data-hi="वार्षिक पंचांग २०२६" data-en="Annual Panchang 2026">वार्षिक पंचांग २०२६</p>
+                <h4><span class="lang-text" data-mr="पंचांग कॅलेंडर" data-hi="पंचांग कैलेंडर" data-en="Panchang Calendar">पंचांग कॅलेंडर</span></h4>
+                <p><span class="lang-text" data-mr="वार्षिक पंचांग २०२६" data-hi="वार्षिक पंचांग २०२६" data-en="Annual Panchang 2026">वार्षिक पंचांग २०२६</span></p>
                 <a href="#" class="download-btn coming-soon">
-                  <i class="bi bi-hourglass-split"></i> <span data-mr="लवकरच" data-hi="जल्द ही" data-en="Coming Soon">लवकरच</span>
+                  <i class="bi bi-hourglass-split"></i> <span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Coming Soon">लवकरच</span></span>
                 </a>
               </div>
             </div>
@@ -468,20 +483,20 @@
               <div class="resource-card">
                 <div class="resource-header">
                   <i class="bi bi-music-note-beamed"></i>
-                  <h4 data-mr="ऑडिओ संसाधने" data-hi="ऑडियो संसाधन" data-en="Audio Resources">ऑडिओ संसाधने</h4>
+                  <h4><span class="lang-text" data-mr="ऑडिओ संसाधने" data-hi="ऑडियो संसाधन" data-en="Audio Resources">ऑडिओ संसाधने</span></h4>
                 </div>
                 <ul class="resource-list">
                   <li>
-                    <span data-mr="शिवाई देवी आरती (MP3)" data-hi="शिवाई देवी आरती (MP3)" data-en="Shivai Devi Aarti (MP3)">शिवाई देवी आरती (MP3)</span>
-                    <a href="#" class="resource-link coming-soon"><span data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></a>
+                    <span><span class="lang-text" data-mr="शिवाई देवी आरती (MP3)" data-hi="शिवाई देवी आरती (MP3)" data-en="Shivai Devi Aarti (MP3)">शिवाई देवी आरती (MP3)</span></span>
+                    <a href="#" class="resource-link coming-soon"><span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></span></a>
                   </li>
                   <li>
-                    <span data-mr="दुर्गा चालीसा (MP3)" data-hi="दुर्गा चालीसा (MP3)" data-en="Durga Chalisa (MP3)">दुर्गा चालीसा (MP3)</span>
-                    <a href="#" class="resource-link coming-soon"><span data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></a>
+                    <span><span class="lang-text" data-mr="दुर्गा चालीसा (MP3)" data-hi="दुर्गा चालीसा (MP3)" data-en="Durga Chalisa (MP3)">दुर्गा चालीसा (MP3)</span></span>
+                    <a href="#" class="resource-link coming-soon"><span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></span></a>
                   </li>
                   <li>
-                    <span data-mr="देवी स्तोत्र (MP3)" data-hi="देवी स्तोत्र (MP3)" data-en="Devi Stotra (MP3)">देवी स्तोत्र (MP3)</span>
-                    <a href="#" class="resource-link coming-soon"><span data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></a>
+                    <span><span class="lang-text" data-mr="देवी स्तोत्र (MP3)" data-hi="देवी स्तोत्र (MP3)" data-en="Devi Stotra (MP3)">देवी स्तोत्र (MP3)</span></span>
+                    <a href="#" class="resource-link coming-soon"><span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></span></a>
                   </li>
                 </ul>
               </div>
@@ -491,20 +506,20 @@
               <div class="resource-card">
                 <div class="resource-header">
                   <i class="bi bi-file-earmark-text"></i>
-                  <h4 data-mr="मंत्र संग्रह" data-hi="मंत्र संग्रह" data-en="Mantra Collection">मंत्र संग्रह</h4>
+                  <h4><span class="lang-text" data-mr="मंत्र संग्रह" data-hi="मंत्र संग्रह" data-en="Mantra Collection">मंत्र संग्रह</span></h4>
                 </div>
                 <ul class="resource-list">
                   <li>
-                    <span data-mr="नवदुर्गा मंत्र (PDF)" data-hi="नवदुर्गा मंत्र (PDF)" data-en="Navdurga Mantras (PDF)">नवदुर्गा मंत्र (PDF)</span>
-                    <a href="#" class="resource-link coming-soon"><span data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></a>
+                    <span><span class="lang-text" data-mr="नवदुर्गा मंत्र (PDF)" data-hi="नवदुर्गा मंत्र (PDF)" data-en="Navdurga Mantras (PDF)">नवदुर्गा मंत्र (PDF)</span></span>
+                    <a href="#" class="resource-link coming-soon"><span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></span></a>
                   </li>
                   <li>
-                    <span data-mr="दुर्गा कवच (PDF)" data-hi="दुर्गा कवच (PDF)" data-en="Durga Kavach (PDF)">दुर्गा कवच (PDF)</span>
-                    <a href="#" class="resource-link coming-soon"><span data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></a>
+                    <span><span class="lang-text" data-mr="दुर्गा कवच (PDF)" data-hi="दुर्गा कवच (PDF)" data-en="Durga Kavach (PDF)">दुर्गा कवच (PDF)</span></span>
+                    <a href="#" class="resource-link coming-soon"><span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></span></a>
                   </li>
                   <li>
-                    <span data-mr="देवी महात्म्य (PDF)" data-hi="देवी महात्म्य (PDF)" data-en="Devi Mahatmya (PDF)">देवी महात्म्य (PDF)</span>
-                    <a href="#" class="resource-link coming-soon"><span data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></a>
+                    <span><span class="lang-text" data-mr="देवी महात्म्य (PDF)" data-hi="देवी महात्म्य (PDF)" data-en="Devi Mahatmya (PDF)">देवी महात्म्य (PDF)</span></span>
+                    <a href="#" class="resource-link coming-soon"><span><span class="lang-text" data-mr="लवकरच" data-hi="जल्द ही" data-en="Soon">लवकरच</span></span></a>
                   </li>
                 </ul>
               </div>
@@ -578,7 +593,7 @@
       <section id="cta" class="cta parallax-section" style="background-image: url('assets/img/about.jpg');">
         <div class="parallax-overlay">
           <div class="parallax-content" data-aos="fade-in">
-            <h2 data-mr="देवी महिमा" data-hi="देवी महिमा" data-en="Glory of the Goddess">देवी महिमा</h2>
+            <h2><span class="lang-text" data-mr="देवी महिमा" data-hi="देवी महिमा" data-en="Glory of the Goddess">देवी महिमा</span></h2>
             <p>या देवी सर्वभुतेषु क्षान्तिरूपेण संस्थिता</p>
             <p>या देवी सर्वभुतेषु शक्तिरूपेण संस्थिता</p>
             <p>या देवी सर्वभुतेषु मातृरूपेण संस्थिता</p>

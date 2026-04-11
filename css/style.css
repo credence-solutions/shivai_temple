@@ -3002,33 +3002,91 @@ body.dark-mode .resource-list li span {
 /*--------------------------------------------------------------
 # Multi-language Support
 --------------------------------------------------------------*/
-[data-mr], [data-hi], [data-en] {
-  display: inline-block;
+.lang-text {
+  display: inline;
 }
 
-body[lang="mr"] [data-mr]::before {
+/* Default - Marathi */
+body[lang="mr"] .lang-text::after {
   content: attr(data-mr);
 }
 
-body[lang="hi"] [data-hi]::before {
+body[lang="hi"] .lang-text::after {
   content: attr(data-hi);
 }
 
-body[lang="en"] [data-en]::before {
+body[lang="en"] .lang-text::after {
   content: attr(data-en);
 }
 
-/* Hide original content when language is switched */
-body[lang="mr"] [data-mr]:not(:empty),
-body[lang="hi"] [data-hi]:not(:empty),
-body[lang="en"] [data-en]:not(:empty) {
-  font-size: 0;
+/* Hide original text content */
+.lang-text {
+  font-size: 0 !important;
+  line-height: 0;
 }
 
-body[lang="mr"] [data-mr]::before,
-body[lang="hi"] [data-hi]::before,
-body[lang="en"] [data-en]::before {
-  font-size: initial;
+.lang-text::after {
+  font-size: 1rem;
+  line-height: normal;
+  display: inline;
+}
+
+/* Preserve font sizes in different contexts */
+h2 .lang-text::after,
+h3 .lang-text::after,
+h4 .lang-text::after,
+h5 .lang-text::after {
+  font-size: inherit;
+}
+
+/* Panchang Date Card */
+.panchang-date-card {
+  background: linear-gradient(135deg, #fff 0%, var(--secondary-cream) 100%);
+  border-radius: 15px;
+  padding: 25px 30px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(139, 38, 53, 0.15);
+  border: 3px solid var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.date-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  color: #2C2C2C;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+}
+
+.date-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-maroon);
+  margin-bottom: 8px;
+}
+
+.current-date {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-gold);
+  margin: 0;
+}
+
+body.dark-mode .panchang-date-card {
+  background: #2C2C2C;
+  border-color: var(--primary-gold);
+}
+
+body.dark-mode .current-date {
+  color: #DAA520;
 }
 
 /* Language indicator badge */
