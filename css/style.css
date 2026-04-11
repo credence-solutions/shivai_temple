@@ -188,6 +188,8 @@ body {
   font-family: "Open Sans", sans-serif;
   color: var(--dark-text);
   background: var(--bg-white);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 a {
@@ -751,7 +753,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding-bottom: 60px;
+  padding: 40px 0;
   overflow: hidden;
 }
 
@@ -764,10 +766,10 @@ section {
   padding-bottom: 40px;
 }
 .section-title h2 {
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
   font-family: "Poppins", sans-serif;
   color: var(--primary-maroon);
   position: relative;
@@ -779,8 +781,8 @@ section {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
+  width: 80px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, var(--primary-saffron), var(--primary-gold), transparent);
   border-radius: 2px;
 }
@@ -788,7 +790,7 @@ section {
   margin-bottom: 0;
   color: var(--gray-text);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -2190,37 +2192,11 @@ section {
 }
 
 .info-box {
-  background: linear-gradient(135deg, #8B2635 0%, #6B313D 50%, #4A2C38 100%);
-  padding: 35px 25px;
-  border-radius: 20px;
   text-align: center;
-  color: var(--light-text);
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 30px rgba(74, 44, 42, 0.3);
-  border: 2px solid rgba(218, 165, 32, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.info-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.15), transparent);
-  transition: left 0.6s;
-}
-
-.info-box:hover::before {
-  left: 100%;
-}
-
-.info-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(139, 38, 53, 0.4);
-  border-color: rgba(218, 165, 32, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-box i {
@@ -2264,85 +2240,50 @@ section {
 # Events Section
 --------------------------------------------------------------*/
 .events {
-  padding: 80px 0;
+  padding: 40px 0;
   background: linear-gradient(180deg, var(--bg-light) 0%, var(--secondary-cream) 100%);
 }
 
 .event-card {
-  background: var(--bg-white);
-  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(139, 38, 53, 0.15);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
-  border: 3px solid var(--primary-gold);
-}
-
-.event-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(255, 153, 51, 0.25);
-  border-color: var(--primary-saffron);
+  display: flex;
+  flex-direction: column;
 }
 
 .event-date {
   background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
   color: var(--light-text);
-  padding: 25px;
+  padding: 18px;
   text-align: center;
   position: relative;
-  overflow: hidden;
-}
-
-.event-date::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(218, 165, 32, 0.15) 0%, transparent 70%);
-  animation: rotate 12s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .event-date .day {
   display: block;
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   color: #F5E6D3;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 1;
-  letter-spacing: 1px;
 }
 
 .event-date .month {
   display: block;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
-  margin-top: 8px;
+  margin-top: 5px;
   color: #DAA520;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 1;
 }
 
 .event-content {
-  padding: 30px;
+  padding: 20px;
   background: linear-gradient(to bottom, var(--bg-white) 0%, var(--secondary-cream) 100%);
+  flex-grow: 1;
 }
 
-.event-content h4 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--primary-maroon);
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
+/* Event content uses uniform heading styles defined above */
 
 .event-content p {
   color: var(--gray-text);
@@ -2721,54 +2662,136 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Panchang Section
+# Uniform Card Styles (Applied to all cards)
 --------------------------------------------------------------*/
-.panchang-section {
-  padding: 60px 0;
-  background: linear-gradient(135deg, var(--secondary-cream) 0%, var(--secondary-peach) 100%);
-}
-
-.panchang-card {
-  background: #fff;
+.temple-info-card,
+.panchang-card,
+.download-card,
+.event-card,
+.info-box {
+  background: linear-gradient(135deg, #fff 0%, var(--secondary-cream) 100%);
   border-radius: 10px;
-  padding: 20px 15px;
-  text-align: center;
+  padding: 25px 20px;
   box-shadow: 0 3px 15px rgba(139, 38, 53, 0.1);
   border: 1px solid rgba(218, 165, 32, 0.2);
   transition: all 0.3s ease;
   height: 100%;
+  min-height: 200px;
 }
 
-.panchang-card:hover {
+.temple-info-card:hover,
+.panchang-card:hover,
+.download-card:hover,
+.event-card:hover,
+.info-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(139, 38, 53, 0.15);
   border-color: var(--primary-gold);
 }
 
-.panchang-icon {
-  width: 45px;
-  height: 45px;
-  margin: 0 auto 12px;
+/* Temple Info Card Specific */
+.temple-info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 120px;
+}
+
+.temple-info-icon {
+  width: 55px;
+  height: 55px;
   background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 26px;
   color: #F5E6D3;
   box-shadow: 0 3px 10px rgba(139, 38, 53, 0.25);
+  flex-shrink: 0;
 }
 
-.panchang-card h4 {
-  font-size: 15px;
+.temple-info-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-maroon);
+  margin-bottom: 5px;
+}
+
+.temple-info-content p {
+  font-size: 13px;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+body.dark-mode .temple-info-card,
+body.dark-mode .panchang-card,
+body.dark-mode .download-card,
+body.dark-mode .event-card,
+body.dark-mode .info-box {
+  background: #2C2C2C;
+  border-color: rgba(218, 165, 32, 0.3);
+}
+
+body.dark-mode .temple-info-content p {
+  color: #E8DCC4;
+}
+
+/*--------------------------------------------------------------
+# Panchang Section
+--------------------------------------------------------------*/
+.panchang-section {
+  padding: 40px 0;
+  background: linear-gradient(135deg, var(--secondary-cream) 0%, var(--secondary-peach) 100%);
+}
+
+.panchang-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Uniform Icon Styles for all cards */
+.panchang-icon,
+.download-icon,
+.info-box i {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #F5E6D3;
+  box-shadow: 0 3px 10px rgba(139, 38, 53, 0.25);
+  flex-shrink: 0;
+}
+
+.info-box i {
+  margin: 0 auto 15px;
+}
+
+/* Uniform heading and text styles for all cards */
+.panchang-card h4,
+.download-card h4,
+.event-content h4,
+.info-box h4,
+.temple-info-content h4 {
+  font-size: 16px;
   font-weight: 700;
   color: var(--primary-maroon);
   margin-bottom: 10px;
 }
 
-.panchang-value {
-  font-size: 16px;
-  font-weight: 600;
+.panchang-value,
+.download-card p,
+.event-content p,
+.info-box p {
+  font-size: 14px;
+  font-weight: 500;
   color: var(--dark-text);
   margin: 8px 0;
 }
@@ -2840,55 +2863,21 @@ body.dark-mode .paksha-masa div {
 # Download Resources Section
 --------------------------------------------------------------*/
 .downloads-section {
-  padding: 60px 0;
+  padding: 40px 0;
   background: #fff;
 }
 
 .download-card {
-  background: linear-gradient(135deg, #fff 0%, var(--secondary-cream) 100%);
-  border-radius: 10px;
-  padding: 25px 20px;
   text-align: center;
-  box-shadow: 0 3px 15px rgba(139, 38, 53, 0.1);
-  border: 1px solid rgba(218, 165, 32, 0.2);
-  transition: all 0.3s ease;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.download-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(139, 38, 53, 0.15);
-  border-color: var(--primary-gold);
-}
+/* Download icon inherits from uniform icon styles above */
 
-.download-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 15px;
-  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  color: #F5E6D3;
-  box-shadow: 0 3px 10px rgba(139, 38, 53, 0.25);
-}
-
-.download-card h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary-maroon);
-  margin-bottom: 10px;
-}
-
+/* Download card uses uniform styles defined above */
 .download-card p {
-  font-size: 13px;
-  color: var(--gray-text);
-  margin-bottom: 15px;
   flex-grow: 1;
 }
 
