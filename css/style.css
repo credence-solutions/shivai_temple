@@ -398,6 +398,26 @@ h6 { font-size: 13px; }
   max-height: 40px;
 }
 
+/* Mobile Header Adjustments */
+@media (max-width: 991px) {
+  #header {
+    height: 70px;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0px 2px 20px rgba(139, 38, 53, 0.2);
+  }
+
+  #header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -525,44 +545,48 @@ h6 { font-size: 13px; }
 * Mobile Navigation - Enhanced Sidebar Style
 */
 .mobile-nav-toggle {
-  color: #fff;
-  font-size: 28px;
+  color: #fff !important;
+  font-size: 28px !important;
   cursor: pointer;
-  display: none;
-  line-height: 0;
+  display: none !important;
+  line-height: 1;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, var(--primary-maroon), var(--deep-maroon));
+  background: linear-gradient(135deg, #FF9933, #FF6B35) !important;
   width: 50px;
   height: 50px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(139, 38, 53, 0.3);
-  border: 2px solid rgba(201, 169, 97, 0.3);
+  box-shadow: 0 5px 20px rgba(255, 153, 51, 0.6) !important;
+  border: 3px solid #FFD700 !important;
+  position: relative;
+  z-index: 1000;
+  margin-left: 10px;
 }
 
 .mobile-nav-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
-  border-color: rgba(201, 169, 97, 0.6);
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 153, 51, 0.8) !important;
+  border-color: #FFD700 !important;
 }
 
 .mobile-nav-toggle.bi-x {
-  background: linear-gradient(135deg, var(--primary-saffron), var(--primary-gold));
-  color: #2C2C2C;
+  background: linear-gradient(135deg, #DC143C, #8B2635) !important;
+  color: #fff !important;
+  box-shadow: 0 5px 20px rgba(220, 20, 60, 0.6) !important;
 }
 
 @media (max-width: 991px) {
   .mobile-nav-toggle {
-    display: flex;
+    display: flex !important;
   }
 
   .navbar ul {
-    display: none;
+    display: none !important;
   }
 
   .header-controls {
-    display: none;
+    display: none !important;
   }
 }
 
