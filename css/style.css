@@ -36,9 +36,21 @@
   line-height: 0;
 }
 
+/* Hide accessibility controls on mobile and tablet */
 @media (max-width: 991px) {
   .header-controls {
-    display: none;
+    display: none !important;
+  }
+}
+
+/* Also hide individual control buttons on mobile */
+@media (max-width: 991px) {
+  .header-control-btn,
+  #langToggle,
+  #textSizeDecrease,
+  #textSizeIncrease,
+  #darkModeToggle {
+    display: none !important;
   }
 }
 
