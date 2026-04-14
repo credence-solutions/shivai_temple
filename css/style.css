@@ -598,17 +598,17 @@ h6 { font-size: 13px; }
 /* Traditional Collapsible Mobile Menu (Dropdown from Header) */
 .navbar-mobile ul {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(95% + 2px);
-  max-width: 502px;
+  left: 0;
+  right: 0;
+  width: 100vw;
   padding: 10px 0;
   margin: 0;
   background-color: #fff;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
   overflow-y: auto;
+  overflow-x: visible;
   max-height: calc(100vh - 70px);
   z-index: 998;
   border-top: 3px solid var(--primary-gold);
@@ -616,20 +616,19 @@ h6 { font-size: 13px; }
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: block;
+  width: 100%;
   padding: 18px 20px;
   font-size: 20px;
   font-weight: 600;
   color: var(--primary-maroon);
-  white-space: normal;
-  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
   transition: 0.3s;
   border-bottom: 1px solid rgba(201, 169, 97, 0.1);
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
 }
 
 .navbar-mobile a i,
