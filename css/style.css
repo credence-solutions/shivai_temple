@@ -161,34 +161,53 @@ body.text-xlarge .header-control-btn {
   /* Primary Spiritual Colors */
   --primary-saffron: #FF9933;
   --primary-maroon: #8B2635;
-  --primary-gold: #DAA520;
+  --primary-gold: #C9A961;
+  --sacred-orange: #FF6B35;
+  --deep-maroon: #6B1F2E;
 
   /* Secondary Colors */
-  --secondary-cream: #FFF8DC;
-  --secondary-peach: #FFE4B5;
-  --secondary-orange: #FF6B35;
+  --secondary-cream: #FFF8F0;
+  --secondary-peach: #FFE8D6;
+  --secondary-orange: #FF7F50;
+  --light-gold: #F4E4C1;
 
   /* Accent Colors */
   --accent-green: #4A7C59;
   --accent-teal: #2D7C7C;
+  --accent-red: #DC143C;
 
   /* Neutral Colors */
   --dark-text: #2C2C2C;
   --light-text: #FFFFFF;
   --gray-text: #666666;
+  --elegant-gray: #555555;
 
   /* Background Colors */
   --bg-white: #FFFFFF;
+  --bg-cream: #FAF9F6;
   --bg-light: #F9F9F9;
   --bg-gradient: linear-gradient(135deg, var(--secondary-cream) 0%, var(--secondary-peach) 100%);
+
+  /* Shadow & Glow Effects */
+  --shadow-gold: 0 4px 20px rgba(201, 169, 97, 0.3);
+  --shadow-maroon: 0 4px 20px rgba(139, 38, 53, 0.2);
+  --glow-gold: 0 0 25px rgba(201, 169, 97, 0.5);
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lora", "Noto Sans Devanagari", serif;
   color: var(--dark-text);
-  background: var(--bg-white);
+  background: #FAF9F6;
   font-size: 14px;
   line-height: 1.6;
+}
+
+/* Mobile font size */
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+    line-height: 1.5;
+  }
 }
 
 a {
@@ -203,8 +222,25 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Cinzel", "Tiro Devanagari Sanskrit", serif;
   color: var(--primary-maroon);
+  letter-spacing: 0.5px;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+h5 { font-size: 14px; }
+h6 { font-size: 13px; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 17px; }
+  h4 { font-size: 15px; }
+  h5 { font-size: 13px; }
+  h6 { font-size: 12px; }
 }
 
 #main {
@@ -220,32 +256,79 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 20px;
-  bottom: 20px;
+  right: 25px;
+  bottom: 25px;
   z-index: 996;
-  background: linear-gradient(135deg, var(--primary-saffron), var(--primary-gold));
-  width: 45px;
-  height: 45px;
+  background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--primary-gold) 50%, var(--primary-saffron) 100%);
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 6px 20px rgba(255, 153, 51, 0.4),
+    0 0 0 3px rgba(201, 169, 97, 0.2),
+    inset 0 2px 5px rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  animation: pulse 2s ease-in-out infinite;
 }
+
+.back-to-top::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, var(--primary-gold), transparent, var(--primary-gold));
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  animation: rotateGlow 3s linear infinite;
+}
+
 .back-to-top i {
-  font-size: 24px;
-  color: var(--light-text);
+  font-size: 26px;
+  color: #2C2C2C;
   line-height: 0;
+  transition: transform 0.3s ease;
 }
+
 .back-to-top:hover {
-  background: linear-gradient(135deg, var(--primary-maroon), var(--secondary-orange));
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(139, 38, 53, 0.4);
+  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
+  transform: translateY(-8px) scale(1.1) rotate(360deg);
+  box-shadow:
+    0 12px 35px rgba(139, 38, 53, 0.5),
+    0 0 0 3px rgba(201, 169, 97, 0.4),
+    inset 0 2px 5px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(201, 169, 97, 0.5);
+  animation: none;
 }
+
+.back-to-top:hover::before {
+  opacity: 1;
+}
+
+.back-to-top:hover i {
+  color: #FFD700;
+  transform: translateY(-2px);
+}
+
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -263,19 +346,51 @@ h1, h2, h3, h4, h5, h6 {
   height: 70px;
   z-index: 997;
   transition: all 0.5s ease-in-out;
-  background: #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 20px rgba(139, 38, 53, 0.15);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+#header.header-scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0px 4px 25px rgba(139, 38, 53, 0.2);
+  border-bottom: 2px solid rgba(201, 169, 97, 0.4);
 }
 #header .logo h1 {
-  font-size: 28px;
+  font-size: 24px;
   margin: 0;
   line-height: 0;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
+  font-family: "Cinzel", "Tiro Devanagari Sanskrit", serif;
+  text-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+}
+
+@media (max-width: 768px) {
+  #header .logo h1 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+  }
 }
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: var(--primary-maroon);
+  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#header .logo h1 a:hover {
+  background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--primary-gold) 50%, var(--primary-saffron) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
 }
 #header .logo img {
   padding: 0;
@@ -321,16 +436,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 
-/* Active/Hover underline effect */
+/* Active/Hover underline effect with golden glow */
 .navbar a::after {
   content: '';
   position: absolute;
   bottom: 5px;
   left: 30px;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-saffron), var(--primary-gold));
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-saffron), var(--primary-gold), var(--primary-saffron));
   transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(201, 169, 97, 0.6);
+  border-radius: 2px;
 }
 
 .navbar a:hover::after, .navbar .active::after {
@@ -595,8 +712,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 {
-  margin: 0 0 25px 0;
-  font-size: 62px;
+  margin: 0 0 20px 0;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
   color: #F5E6D3;
@@ -604,7 +721,7 @@ h1, h2, h3, h4, h5, h6 {
     2px 2px 8px rgba(0, 0, 0, 0.8),
     0 0 20px rgba(218, 165, 32, 0.4);
   animation: heroGlow 4s ease-in-out infinite alternate;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   position: relative;
   z-index: 3;
 }
@@ -627,16 +744,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h2 {
   color: #E8DCC4;
-  margin-bottom: 40px;
-  font-size: 28px;
+  margin-bottom: 30px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   max-width: 900px;
   position: relative;
   z-index: 3;
   animation: fadeInUp 1.5s ease-out;
-  padding: 20px 30px;
+  padding: 16px 24px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   backdrop-filter: blur(8px);
@@ -720,16 +837,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #hero h1 {
-    font-size: 36px;
+    font-size: 26px;
     line-height: 1.3;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
   }
 
   #hero h2 {
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-    padding: 15px;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    padding: 12px 15px;
   }
 
   #hero .hero-container {
@@ -748,6 +866,161 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Hero Decorative Elements */
+.hero-decoration {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.2;
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M 100 20 Q 120 40, 140 60 Q 160 80, 180 100 Q 160 120, 140 140 Q 120 160, 100 180 Q 80 160, 60 140 Q 40 120, 20 100 Q 40 80, 60 60 Q 80 40, 100 20 Z" fill="none" stroke="%23C9A961" stroke-width="2"/><circle cx="100" cy="100" r="15" fill="%23C9A961" opacity="0.6"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: rotateDecoration 30s linear infinite;
+}
+
+@keyframes rotateDecoration {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-decoration-top-left {
+  top: 30px;
+  left: 30px;
+}
+
+.hero-decoration-top-right {
+  top: 30px;
+  right: 30px;
+  animation-direction: reverse;
+}
+
+.hero-decoration-bottom-left {
+  bottom: 80px;
+  left: 30px;
+  animation-direction: reverse;
+}
+
+.hero-decoration-bottom-right {
+  bottom: 80px;
+  right: 30px;
+}
+
+/* Hero Content Wrapper with Decorative Borders */
+.hero-content-wrapper {
+  position: relative;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-border-ornament {
+  width: 200px;
+  height: 3px;
+  margin: 0 auto 30px;
+  background: linear-gradient(90deg, transparent, #C9A961, #FFD700, #C9A961, transparent);
+  position: relative;
+  box-shadow: 0 0 15px rgba(201, 169, 97, 0.6);
+}
+
+.hero-border-ornament::before,
+.hero-border-ornament::after {
+  content: "◆";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFD700;
+  font-size: 16px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.hero-border-ornament::before {
+  left: -30px;
+}
+
+.hero-border-ornament::after {
+  right: -30px;
+}
+
+.hero-border-top {
+  margin-bottom: 30px;
+}
+
+.hero-border-bottom {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.hero-divider {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.hero-divider-icon {
+  font-size: 36px;
+  color: #FFD700;
+  display: inline-block;
+  animation: pulseGlow 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7));
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+  }
+}
+
+/* Mobile responsive for decorations */
+@media (max-width: 768px) {
+  .hero-decoration {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-decoration-top-left,
+  .hero-decoration-top-right {
+    top: 15px;
+  }
+
+  .hero-decoration-top-left {
+    left: 15px;
+  }
+
+  .hero-decoration-top-right {
+    right: 15px;
+  }
+
+  .hero-decoration-bottom-left,
+  .hero-decoration-bottom-right {
+    bottom: 40px;
+  }
+
+  .hero-decoration-bottom-left {
+    left: 15px;
+  }
+
+  .hero-decoration-bottom-right {
+    right: 15px;
+  }
+
+  .hero-content-wrapper {
+    padding: 20px 10px;
+  }
+
+  .hero-border-ornament {
+    width: 120px;
+  }
+
+  .hero-divider-icon {
+    font-size: 28px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -762,36 +1035,69 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
+  position: relative;
 }
+
 .section-title h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-family: "Cinzel", "Tiro Devanagari Sanskrit", serif;
   color: var(--primary-maroon);
   position: relative;
   display: inline-block;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(139, 38, 53, 0.1);
 }
+
+/* Decorative underline with lotus design */
 .section-title h2::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--primary-saffron), var(--primary-gold), transparent);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-saffron), var(--primary-gold), var(--primary-saffron), transparent);
   border-radius: 2px;
+  box-shadow: 0 0 15px rgba(201, 169, 97, 0.5);
 }
+
+/* Decorative diamonds */
+.section-title h2::before {
+  content: "◆";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-gold);
+  font-size: 12px;
+  text-shadow: 0 0 10px rgba(201, 169, 97, 0.8);
+}
+
 .section-title p {
   margin-bottom: 0;
-  color: var(--gray-text);
+  color: var(--elegant-gray);
   font-weight: 500;
   font-size: 14px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
+  font-family: "Lora", "Noto Sans Devanagari", serif;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 22px;
+    letter-spacing: 0.3px;
+  }
+
+  .section-title p {
+    font-size: 13px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1927,14 +2233,28 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  color: #fff;
-  font-size: 14px;
-  background: #111;
+  color: #E8DCC4;
+  font-size: 15px;
+  background: linear-gradient(135deg, #1a0e0e 0%, #2C1810 50%, #1a0e0e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-gold), var(--primary-saffron), var(--primary-gold), transparent);
+  box-shadow: 0 0 20px rgba(201, 169, 97, 0.6);
 }
 
 #footer .footer-top {
-  padding: 30px 0 10px 0;
-  background: #1e1e1e;
+  padding: 50px 0 30px 0;
+  background: linear-gradient(135deg, rgba(139, 38, 53, 0.15) 0%, rgba(60, 30, 30, 0.2) 100%);
+  position: relative;
 }
 
 #footer .footer-top .footer-contact {
@@ -1961,11 +2281,25 @@ section {
 }
 
 #footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  color: #FFD700;
   position: relative;
-  padding-bottom: 12px;
+  padding-bottom: 15px;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(201, 169, 97, 0.4);
+}
+
+#footer .footer-top h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-gold), transparent);
+  box-shadow: 0 0 10px rgba(201, 169, 97, 0.5);
 }
 
 #footer .footer-top .footer-links {
@@ -1979,10 +2313,17 @@ section {
 }
 
 #footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #1ed33c;
-  font-size: 18px;
+  padding-right: 8px;
+  color: var(--primary-gold);
+  font-size: 14px;
   line-height: 1;
+  transition: all 0.3s ease;
+}
+
+#footer .footer-top .footer-links ul li:hover i {
+  color: #FFD700;
+  transform: translateX(3px);
+  text-shadow: 0 0 10px rgba(201, 169, 97, 0.7);
 }
 
 #footer .footer-top .footer-links ul li {
@@ -1996,15 +2337,34 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: rgba(255, 255, 255, 0.6);
-  transition: 0.3s;
+  color: rgba(232, 220, 196, 0.75);
+  transition: all 0.3s ease;
   display: inline-block;
-  line-height: 1;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 5px;
+}
+
+#footer .footer-top .footer-links ul a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary-gold);
+  transition: width 0.3s ease;
 }
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #fff;
+  color: #FFD700;
+  padding-left: 10px;
+  text-shadow: 0 0 10px rgba(201, 169, 97, 0.5);
+}
+
+#footer .footer-top .footer-links ul a:hover::before {
+  width: 100%;
 }
 
 #footer .footer-newsletter {
@@ -2282,9 +2642,9 @@ section {
 
 .event-content p {
   color: var(--gray-text);
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .event-details {
@@ -2466,23 +2826,23 @@ section {
 }
 
 .thought-title {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   color: #8B2635;
-  margin-bottom: 25px;
-  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  font-family: "Cinzel", serif;
 }
 
 .thought-text {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #4A2C38;
-  margin-bottom: 20px;
-  font-family: "Raleway", sans-serif;
+  margin-bottom: 15px;
+  font-family: "Lora", "Noto Sans Devanagari", serif;
   font-style: italic;
   position: relative;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 .thought-text::before,
@@ -2505,10 +2865,10 @@ section {
 }
 
 .thought-translation {
-  font-size: 18px;
+  font-size: 14px;
   color: #666;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  line-height: 1.5;
+  margin-bottom: 12px;
   font-style: italic;
 }
 
@@ -2542,20 +2902,20 @@ section {
 
 @media (max-width: 768px) {
   .thought-card {
-    padding: 40px 30px;
+    padding: 30px 20px;
   }
 
   .thought-text {
-    font-size: 20px;
-    padding: 0 20px;
+    font-size: 15px;
+    padding: 0 15px;
   }
 
   .thought-translation {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .thought-title {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 
@@ -2574,22 +2934,41 @@ section {
 }
 
 .floating-diya,
-.floating-flower {
+.floating-flower,
+.floating-om {
   position: absolute;
   animation: float 20s infinite ease-in-out;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .floating-diya {
-  font-size: 30px;
-  color: #DAA520;
-  filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.6));
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 12px rgba(201, 169, 97, 0.7));
+}
+
+.floating-diya svg {
+  width: 100%;
+  height: 100%;
 }
 
 .floating-flower {
-  font-size: 25px;
-  color: #8B2635;
-  filter: drop-shadow(0 0 8px rgba(139, 38, 53, 0.4));
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0 0 10px rgba(220, 20, 60, 0.6));
+}
+
+.floating-flower svg {
+  width: 100%;
+  height: 100%;
+}
+
+.floating-om {
+  font-size: 40px;
+  font-family: "Tiro Devanagari Sanskrit", serif;
+  color: #C9A961;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px rgba(201, 169, 97, 0.8));
 }
 
 @keyframes float {
@@ -2609,18 +2988,19 @@ section {
   }
 }
 
-/* Stagger animation delays */
-.floating-diya:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 18s; }
-.floating-diya:nth-child(2) { left: 30%; animation-delay: 3s; animation-duration: 22s; }
-.floating-diya:nth-child(3) { left: 50%; animation-delay: 6s; animation-duration: 20s; }
-.floating-diya:nth-child(4) { left: 70%; animation-delay: 9s; animation-duration: 19s; }
-.floating-diya:nth-child(5) { left: 90%; animation-delay: 12s; animation-duration: 21s; }
+/* Stagger animation delays - Diyas (3 elements) */
+.floating-diya:nth-child(1) { left: 15%; animation-delay: 0s; animation-duration: 18s; }
+.floating-diya:nth-child(2) { left: 55%; animation-delay: 5s; animation-duration: 22s; }
+.floating-diya:nth-child(3) { left: 85%; animation-delay: 10s; animation-duration: 20s; }
 
-.floating-flower:nth-child(6) { left: 20%; animation-delay: 2s; animation-duration: 23s; }
-.floating-flower:nth-child(7) { left: 40%; animation-delay: 5s; animation-duration: 19s; }
-.floating-flower:nth-child(8) { left: 60%; animation-delay: 8s; animation-duration: 21s; }
-.floating-flower:nth-child(9) { left: 80%; animation-delay: 11s; animation-duration: 20s; }
-.floating-flower:nth-child(10) { left: 15%; animation-delay: 14s; animation-duration: 22s; }
+/* Lotus Flowers (3 elements) */
+.floating-flower:nth-child(4) { left: 25%; animation-delay: 2s; animation-duration: 23s; }
+.floating-flower:nth-child(5) { left: 65%; animation-delay: 7s; animation-duration: 19s; }
+.floating-flower:nth-child(6) { left: 90%; animation-delay: 12s; animation-duration: 21s; }
+
+/* Om Symbols (2 elements) */
+.floating-om:nth-child(7) { left: 35%; animation-delay: 4s; animation-duration: 25s; }
+.floating-om:nth-child(8) { left: 75%; animation-delay: 14s; animation-duration: 24s; }
 
 /*--------------------------------------------------------------
 # Responsive Design Improvements
@@ -2664,14 +3044,36 @@ section {
 .download-card,
 .event-card,
 .info-box {
-  background: linear-gradient(135deg, #fff 0%, var(--secondary-cream) 100%);
-  border-radius: 10px;
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--secondary-cream) 50%, #FFFFFF 100%);
+  border-radius: 15px;
   padding: 25px 20px;
-  box-shadow: 0 3px 15px rgba(139, 38, 53, 0.1);
-  border: 1px solid rgba(218, 165, 32, 0.2);
-  transition: all 0.3s ease;
+  box-shadow:
+    0 4px 20px rgba(139, 38, 53, 0.12),
+    0 2px 8px rgba(201, 169, 97, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--primary-gold), var(--light-gold), var(--primary-gold)) 1;
+  border-image-slice: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
   min-height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.temple-info-card::before,
+.panchang-card::before,
+.download-card::before,
+.event-card::before,
+.info-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.1), transparent);
+  transition: left 0.6s ease;
 }
 
 .temple-info-card:hover,
@@ -2679,9 +3081,21 @@ section {
 .download-card:hover,
 .event-card:hover,
 .info-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(139, 38, 53, 0.15);
-  border-color: var(--primary-gold);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 12px 35px rgba(139, 38, 53, 0.18),
+    0 8px 16px rgba(201, 169, 97, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 0 30px rgba(201, 169, 97, 0.3);
+  border-image: linear-gradient(135deg, var(--primary-saffron), var(--primary-gold), var(--primary-saffron)) 1;
+}
+
+.temple-info-card:hover::before,
+.panchang-card:hover::before,
+.download-card:hover::before,
+.event-card:hover::before,
+.info-box:hover::before {
+  left: 100%;
 }
 
 /* Temple Info Card Specific */
@@ -2693,30 +3107,72 @@ section {
 }
 
 .temple-info-icon {
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  font-size: 28px;
   color: #F5E6D3;
-  box-shadow: 0 3px 10px rgba(139, 38, 53, 0.25);
+  box-shadow:
+    0 4px 15px rgba(139, 38, 53, 0.3),
+    0 0 0 3px rgba(201, 169, 97, 0.2),
+    inset 0 2px 5px rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.temple-info-icon::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, var(--primary-gold), transparent, var(--primary-gold));
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.temple-info-card:hover .temple-info-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow:
+    0 6px 20px rgba(139, 38, 53, 0.4),
+    0 0 0 3px rgba(201, 169, 97, 0.4),
+    inset 0 2px 5px rgba(255, 255, 255, 0.2),
+    0 0 25px rgba(201, 169, 97, 0.5);
+}
+
+.temple-info-card:hover .temple-info-icon::before {
+  opacity: 1;
 }
 
 .temple-info-content h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--primary-maroon);
   margin-bottom: 5px;
 }
 
 .temple-info-content p {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--dark-text);
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .temple-info-content h4 {
+    font-size: 14px;
+  }
+
+  .temple-info-content p {
+    font-size: 11px;
+  }
 }
 
 body.dark-mode .temple-info-card,
@@ -2747,22 +3203,65 @@ body.dark-mode .temple-info-content p {
   justify-content: center;
 }
 
-/* Uniform Icon Styles for all cards */
+/* Uniform Icon Styles for all cards - Enhanced with golden glow */
 .panchang-icon,
 .download-icon,
 .info-box i {
-  width: 55px;
-  height: 55px;
-  margin: 0 auto 15px;
-  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 18px;
+  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  color: #F5E6D3;
-  box-shadow: 0 3px 10px rgba(139, 38, 53, 0.25);
+  font-size: 30px;
+  color: #FFD700;
+  box-shadow:
+    0 5px 20px rgba(139, 38, 53, 0.3),
+    0 0 0 4px rgba(201, 169, 97, 0.15),
+    inset 0 2px 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(201, 169, 97, 0.2);
   flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.panchang-icon::before,
+.download-icon::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(135deg, var(--primary-gold) 0%, transparent 50%, var(--primary-gold) 100%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  animation: rotateGlow 3s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.panchang-card:hover .panchang-icon,
+.download-card:hover .download-icon {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow:
+    0 8px 30px rgba(139, 38, 53, 0.4),
+    0 0 0 4px rgba(201, 169, 97, 0.3),
+    inset 0 2px 8px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(255, 215, 0, 0.5);
+  color: #FFD700;
+}
+
+.panchang-card:hover .panchang-icon::before,
+.download-card:hover .download-icon::before {
+  opacity: 1;
 }
 
 .info-box i {
@@ -2775,20 +3274,38 @@ body.dark-mode .temple-info-content p {
 .event-content h4,
 .info-box h4,
 .temple-info-content h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--primary-maroon);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .panchang-value,
 .download-card p,
 .event-content p,
 .info-box p {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--dark-text);
-  margin: 8px 0;
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .panchang-card h4,
+  .download-card h4,
+  .event-content h4,
+  .info-box h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .panchang-value,
+  .download-card p,
+  .event-content p,
+  .info-box p {
+    font-size: 12px;
+    margin: 5px 0;
+  }
 }
 
 .panchang-time {
@@ -2877,35 +3394,81 @@ body.dark-mode .paksha-masa div {
 }
 
 .download-btn {
-  display: inline-block;
-  padding: 10px 24px;
-  background: linear-gradient(135deg, #8B2635 0%, #6B313D 100%);
-  color: #F5E6D3;
-  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
+  color: #FFD700;
+  border-radius: 25px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 13px;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 12px rgba(139, 38, 53, 0.25);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 15px rgba(139, 38, 53, 0.3),
+    0 0 0 2px rgba(201, 169, 97, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.5px;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 97, 0.3), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.download-btn i {
+  transition: transform 0.3s ease;
 }
 
 .download-btn:hover {
-  background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+  background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--primary-gold) 50%, var(--primary-saffron) 100%);
   color: #2C2C2C;
-  transform: scale(1.05);
-  box-shadow: 0 5px 18px rgba(218, 165, 32, 0.35);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 8px 25px rgba(255, 153, 51, 0.4),
+    0 0 0 2px rgba(201, 169, 97, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(201, 169, 97, 0.4);
+}
+
+.download-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.download-btn:hover i {
+  transform: translateY(2px) scale(1.1);
+}
+
+.download-btn:active {
+  transform: translateY(-1px) scale(1.02);
 }
 
 .download-btn.coming-soon {
-  background: linear-gradient(135deg, #999 0%, #777 100%);
+  background: linear-gradient(135deg, #888 0%, #666 100%);
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.6;
+  color: #CCC;
 }
 
 .download-btn.coming-soon:hover {
   transform: none;
-  background: linear-gradient(135deg, #999 0%, #777 100%);
-  color: #F5E6D3;
+  background: linear-gradient(135deg, #888 0%, #666 100%);
+  color: #CCC;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .resource-card {
