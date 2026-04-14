@@ -557,16 +557,28 @@ h6 { font-size: 13px; }
 * Mobile Navigation - Traditional Collapsible Menu
 */
 .mobile-nav-toggle {
-  color: var(--primary-maroon);
-  font-size: 32px;
+  color: #8B2635;
+  font-size: 34px;
   cursor: pointer;
   display: none;
   line-height: 0;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  padding: 8px;
+  background: rgba(255, 153, 51, 0.1);
+  border-radius: 8px;
+  border: 2px solid #8B2635;
+}
+
+.mobile-nav-toggle:hover {
+  background: rgba(255, 153, 51, 0.2);
+  color: #FF9933;
+  border-color: #FF9933;
 }
 
 .mobile-nav-toggle.bi-x {
-  color: var(--primary-saffron);
+  color: #FF9933;
+  background: rgba(255, 153, 51, 0.15);
+  border-color: #FF9933;
 }
 
 @media (max-width: 991px) {
