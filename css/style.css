@@ -600,9 +600,8 @@ h6 { font-size: 13px; }
   display: block;
   position: fixed;
   top: 70px;
-  left: 0;
   right: 0;
-  width: 100vw;
+  width: 50vw;
   padding: 10px 0;
   margin: 0;
   background-color: #fff;
