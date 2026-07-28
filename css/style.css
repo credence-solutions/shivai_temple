@@ -37,14 +37,14 @@
 }
 
 /* Hide accessibility controls on mobile and tablet */
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .header-controls {
     display: none !important;
   }
 }
 
 /* Also hide individual control buttons on mobile */
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .header-control-btn,
   #langToggle,
   #textSizeDecrease,
@@ -151,19 +151,6 @@ body.text-large .header-control-btn,
 body.text-xlarge .header-control-btn {
   width: 36px !important;
   height: 36px !important;
-}
-
-@media (max-width: 768px) {
-  .accessibility-controls {
-    right: 10px;
-    top: 80px;
-  }
-
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -389,20 +376,32 @@ h6 { font-size: 13px; }
   }
 }
 #header .logo h1 a, #header .logo h1 a:hover {
-  background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-maroon);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  #header .logo h1 a, #header .logo h1 a:hover {
+    background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 #header .logo h1 a:hover {
-  background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--primary-gold) 50%, var(--primary-saffron) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
+  color: var(--primary-saffron);
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  #header .logo h1 a:hover {
+    background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--primary-gold) 50%, var(--primary-saffron) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
+  }
 }
 #header .logo img {
   padding: 0;
@@ -411,7 +410,7 @@ h6 { font-size: 13px; }
 }
 
 /* Mobile Header Adjustments */
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   #header {
     height: 70px;
     background: rgba(255, 255, 255, 0.98) !important;
@@ -581,7 +580,7 @@ h6 { font-size: 13px; }
   border-color: #FF9933;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .mobile-nav-toggle {
     display: block;
   }
