@@ -359,54 +359,27 @@ h6 { font-size: 13px; }
   box-shadow: 0px 4px 25px rgba(139, 38, 53, 0.2);
   border-bottom: 2px solid rgba(201, 169, 97, 0.4);
 }
-#header .logo h1 {
-  font-size: 24px;
-  margin: 0;
-  line-height: 0;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: "Cinzel", "Tiro Devanagari Sanskrit", serif;
-  text-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+#header .logo {
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  #header .logo h1 {
-    font-size: 20px;
-    letter-spacing: 0.5px;
-  }
-}
-#header .logo h1 a, #header .logo h1 a:hover {
-  color: var(--primary-maroon);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  #header .logo h1 a, #header .logo h1 a:hover {
-    background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--deep-maroon) 50%, var(--primary-maroon) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-#header .logo h1 a:hover {
-  color: var(--primary-saffron);
-}
-
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  #header .logo h1 a:hover {
-    background: linear-gradient(135deg, var(--primary-saffron) 0%, var(--primary-gold) 50%, var(--primary-saffron) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
-  }
-}
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  height: 52px;
+  width: auto;
+  transition: filter 0.3s ease;
+}
+
+#header .logo a:hover img {
+  filter: drop-shadow(0 0 8px rgba(201, 169, 97, 0.5));
+}
+
+@media (max-width: 768px) {
+  #header .logo img {
+    height: 42px;
+  }
 }
 
 /* Mobile Header Adjustments */
